@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputActionsData:
   - Binding: <Keyboard>/w
-    InputType: 0
-    ActionType: 0
-  - Binding: <Keyboard>/a
-    InputType: 1
+    InputType: {fileID: 11400000, guid: dd0ab825fb9aaff469891a8b60315763, type: 2}
     ActionType: 0
   - Binding: <Keyboard>/s
-    InputType: 3
+    InputType: {fileID: 11400000, guid: 5926fc13765e22d4eb3bd96d2fbf5677, type: 2}
+    ActionType: 0
+  - Binding: <Keyboard>/a
+    InputType: {fileID: 11400000, guid: 0bf30c1a22908b147b894625957bf9f6, type: 2}
     ActionType: 0
   - Binding: <Keyboard>/d
-    InputType: 2
+    InputType: {fileID: 11400000, guid: c4286c25dcb24334e8c918be24155515, type: 2}
     ActionType: 0

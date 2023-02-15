@@ -25,27 +25,27 @@ public class Controller : MonoBehaviour
 
     private void RecievePlayerInputPressed(object sender, PlayerInputArguments e)
     {
-        if (e.InputType == movementEnums.Enum[Enums.Direction.Up])
+        if (e.InputType == movementEnums.Up)
         {
             inputs.y = inputs.y < 0 ? 0 : 1;
             goto InputReceived;
         }
-        if (e.InputType == movementEnums.Enum[Enums.Direction.Down])
+        if (e.InputType == movementEnums.Down)
         {
-            inputs.y = inputs.y > 0 ? 0 : 1;
+            inputs.y = inputs.y > 0 ? 0 : -1;
             goto InputReceived;
         }
-        if (e.InputType == movementEnums.Enum[Enums.Direction.Left])
+        if (e.InputType == movementEnums.Left)
         {
-            inputs.x = inputs.x > 0 ? 0 : 1;
+            inputs.x = inputs.x > 0 ? 0 : -1;
             goto InputReceived;
         }
-        if (e.InputType == movementEnums.Enum[Enums.Direction.Right])
+        if (e.InputType == movementEnums.Right)
         {
             inputs.x = inputs.x < 0 ? 0 : 1;
             goto InputReceived;
         }
-
+        return;
         InputReceived:
         velocity = inputs.x * transform.right + inputs.y * transform.forward;
         velocity = velocity.normalized * speed;
@@ -53,27 +53,27 @@ public class Controller : MonoBehaviour
 
     private void RecievePlayerInputReleased(object sender, PlayerInputArguments e)
     {
-        if (e.InputType == movementEnums.Enum[Enums.Direction.Up])
+        if (e.InputType == movementEnums.Up)
         {
             inputs.y = inputs.y > 0 ? 0 : 1;
             goto InputReceived;
         }
-        if (e.InputType == movementEnums.Enum[Enums.Direction.Down])
+        if (e.InputType == movementEnums.Down)
         {
             inputs.y = inputs.y < 0 ? 0 : 1;
             goto InputReceived;
         }
-        if (e.InputType == movementEnums.Enum[Enums.Direction.Left])
+        if (e.InputType == movementEnums.Left)
         {
             inputs.x = inputs.x < 0 ? 0 : 1;
             goto InputReceived;
         }
-        if (e.InputType == movementEnums.Enum[Enums.Direction.Right])
+        if (e.InputType == movementEnums.Right)
         {
             inputs.x = inputs.x > 0 ? 0 : 1;
             goto InputReceived;
         }
-
+        return;
         InputReceived:
         velocity = inputs.x * transform.right + inputs.y * transform.forward;
         velocity = velocity.normalized * speed;

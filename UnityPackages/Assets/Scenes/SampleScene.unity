@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 11400000, guid: 331e6b6fd1db64f40a2b5f5e5df9e3cd, type: 2}
+  movementEnums: {fileID: 11400000, guid: 3a8ca250b60c6474bac40433e8054f91, type: 2}
   speed: 2
 --- !u!54 &1385287097
 Rigidbody:
