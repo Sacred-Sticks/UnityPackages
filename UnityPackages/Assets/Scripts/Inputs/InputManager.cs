@@ -7,7 +7,7 @@ public class PlayerInputArguments : EventArgs
 {
     public InputAction.CallbackContext Context { get; set; }
     public string Binding { get; set; }
-    public Enums.InputType InputType { get; set; }
+    public EnumerableObject InputType { get; set; }
 }
 
 [CreateAssetMenu]
@@ -17,7 +17,7 @@ public class InputManager : ScriptableObject
     private struct InputActionsData
     {
         public string Binding;
-        public Enums.InputType InputType;
+        public EnumerableObject InputType;
         public InputActionType ActionType;
     }
     [SerializeField] private List<InputActionsData> inputActionsData;
@@ -40,7 +40,7 @@ public class InputManager : ScriptableObject
         }
     }
 
-    private void CallInputEvents(InputAction.CallbackContext context, Enums.InputType inputType)
+    private void CallInputEvents(InputAction.CallbackContext context, EnumerableObject inputType)
     {
         PlayerInputArguments args = new()
         {

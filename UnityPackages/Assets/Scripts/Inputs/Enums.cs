@@ -1,11 +1,11 @@
 public class Enums
 {
-    public enum InputType
+    public enum Direction
     {
         // Movement
-        MoveForward,
-        MoveLeft,
-        MoveRight,
-        MoveBackward,
+        Up,
+        Down,
+        Left,
+        Right,
     }
 }

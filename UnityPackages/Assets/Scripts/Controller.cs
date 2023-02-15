@@ -4,6 +4,7 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private BidirectionalReferenceEnum movementEnums;
     [Space]
     [SerializeField] private float speed;
 
@@ -24,42 +25,56 @@ public class Controller : MonoBehaviour
 
     private void RecievePlayerInputPressed(object sender, PlayerInputArguments e)
     {
-        switch (e.InputType)
+        if (e.InputType == movementEnums.Enum[Enums.Direction.Up])
         {
-            case Enums.InputType.MoveForward:
-                inputs.y = inputs.y < 0 ? 0 : 1;
-                break;
-            case Enums.InputType.MoveBackward:
-                inputs.y = inputs.y > 0 ? 0 : -1;
-                break;
-            case Enums.InputType.MoveRight:
-                inputs.x = inputs.x < 0 ? 0 : 1;
-                break;
-            case Enums.InputType.MoveLeft:
-                inputs.x = inputs.x > 0 ? 0 : -1;
-                break;
+            inputs.y = inputs.y < 0 ? 0 : 1;
+            goto InputReceived;
         }
+        if (e.InputType == movementEnums.Enum[Enums.Direction.Down])
+        {
+            inputs.y = inputs.y > 0 ? 0 : 1;
+            goto InputReceived;
+        }
+        if (e.InputType == movementEnums.Enum[Enums.Direction.Left])
+        {
+            inputs.x = inputs.x > 0 ? 0 : 1;
+            goto InputReceived;
+        }
+        if (e.InputType == movementEnums.Enum[Enums.Direction.Right])
+        {
+            inputs.x = inputs.x < 0 ? 0 : 1;
+            goto InputReceived;
+        }
+
+        InputReceived:
         velocity = inputs.x * transform.right + inputs.y * transform.forward;
         velocity = velocity.normalized * speed;
     }
 
     private void RecievePlayerInputReleased(object sender, PlayerInputArguments e)
     {
-        switch (e.InputType)
+        if (e.InputType == movementEnums.Enum[Enums.Direction.Up])
         {
-            case Enums.InputType.MoveForward:
-                inputs.y = inputs.y > 0 ? 0 : -1;
-                break;
-            case Enums.InputType.MoveBackward:
-                inputs.y = inputs.y < 0 ? 0 : 1;
-                break;
-            case Enums.InputType.MoveRight:
-                inputs.x = inputs.x > 0 ? 0 : -1;
-                break;
-            case Enums.InputType.MoveLeft:
-                inputs.x = inputs.x < 0 ? 0 : 1;
-                break;
+            inputs.y = inputs.y > 0 ? 0 : 1;
+            goto InputReceived;
         }
+        if (e.InputType == movementEnums.Enum[Enums.Direction.Down])
+        {
+            inputs.y = inputs.y < 0 ? 0 : 1;
+            goto InputReceived;
+        }
+        if (e.InputType == movementEnums.Enum[Enums.Direction.Left])
+        {
+            inputs.x = inputs.x < 0 ? 0 : 1;
+            goto InputReceived;
+        }
+        if (e.InputType == movementEnums.Enum[Enums.Direction.Right])
+        {
+            inputs.x = inputs.x > 0 ? 0 : 1;
+            goto InputReceived;
+        }
+
+        InputReceived:
         velocity = inputs.x * transform.right + inputs.y * transform.forward;
         velocity = velocity.normalized * speed;
     }
