@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class DemoController : MonoBehaviour
+public class DemoKeyboard : MonoBehaviour
 {
     [SerializeField] private InputManager inputManager;
     [SerializeField] private BidirectionalReferenceEnum movementEnums;
@@ -20,40 +20,8 @@ public class DemoController : MonoBehaviour
     private void Start()
     {
         // Subscribe to events in inputManager sciptable object
-        inputManager.OnInputEvent += RecievePlayerInput;
         inputManager.OnInputPressedEvent += RecievePlayerInputPressed;
         inputManager.OnInputReleasedEvent += RecievePlayerInputReleased;
-    }
-
-    private void RecievePlayerInput(object sender, PlayerInputArguments e)
-    {
-        // Makeshift Switch Statement because SO's cannot be declared as const, therefore cannot be a case
-        if (e.InputType == movementEnums.Up)
-        {
-            Debug.Log("Up Value Changed");
-            goto InputReceived;
-        }
-        if (e.InputType == movementEnums.Down)
-        {
-            Debug.Log("Down Value Changed");
-            goto InputReceived;
-        }
-        if (e.InputType == movementEnums.Left)
-        {
-            Debug.Log("Left Value Changed");
-            goto InputReceived;
-        }
-        if (e.InputType == movementEnums.Right)
-        {
-            Debug.Log("Right Input Changed");
-            goto InputReceived;
-        }
-        // Default Case Goes Here
-        Debug.Log("Default Case Input");
-        return;
-    InputReceived:
-        // Anything After Switch Statement still needed after modifying values goes here
-        Debug.Log("Input Modified");
     }
 
     private void RecievePlayerInputPressed(object sender, PlayerInputArguments e)
@@ -82,7 +50,7 @@ public class DemoController : MonoBehaviour
         // Default Case Goes Here
         Debug.Log("Default Case Input Pressed");
         return;
-        InputReceived:
+    InputReceived:
         // Anything After Switch Statement still needed after modifying values goes here
         velocity = inputs.x * transform.right + inputs.y * transform.forward;
         velocity = velocity.normalized * speed;
@@ -114,7 +82,7 @@ public class DemoController : MonoBehaviour
         // Default Case Goes Here
         Debug.Log("Default Case Input Released");
         return;
-        InputReceived:
+    InputReceived:
         // Anything After Switch Statement still needed after modifying values goes here
         velocity = inputs.x * transform.right + inputs.y * transform.forward;
         velocity = velocity.normalized * speed;
