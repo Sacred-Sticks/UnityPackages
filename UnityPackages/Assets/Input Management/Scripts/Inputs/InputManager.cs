@@ -27,9 +27,11 @@ public class InputManager : ScriptableObject
     public event OnInput OnInputEvent;
     public event OnInput OnInputPressedEvent;
     public event OnInput OnInputReleasedEvent;
+    public List<InputAction> InputActions { get; private set; }
 
     private void OnEnable()
     {
+        InputActions.Clear();
         InputAction action;
         foreach (var inputData in inputActionsData)
         {
@@ -37,6 +39,7 @@ public class InputManager : ScriptableObject
             action.performed += context => CallInputEvents(context: context, inputType: inputData.InputType);
             action.canceled += context => CallInputEvents(context: context, inputType: inputData.InputType);
             SetActionPath(action: action, binding: inputData.Binding);
+            InputActions.Add(action);
         }
     }
 
