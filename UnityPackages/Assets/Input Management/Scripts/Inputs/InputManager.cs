@@ -16,9 +16,10 @@ public class InputManager : ScriptableObject
     [Serializable]
     private struct InputActionsData
     {
+        public string Key;
         public string Binding;
-        public EnumerableObject InputType;
         public InputActionType ActionType;
+        public EnumerableObject InputType;
     }
     [SerializeField] private List<InputActionsData> inputActionsData;
 
@@ -31,7 +32,7 @@ public class InputManager : ScriptableObject
 
     private void OnEnable()
     {
-        InputActions.Clear();
+        InputActions = new();
         InputAction action;
         foreach (var inputData in inputActionsData)
         {

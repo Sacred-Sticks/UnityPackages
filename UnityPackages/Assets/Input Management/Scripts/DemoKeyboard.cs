@@ -48,7 +48,6 @@ public class DemoKeyboard : MonoBehaviour
             goto InputReceived;
         }
         // Default Case Goes Here
-        Debug.Log("Default Case Input Pressed");
         return;
     InputReceived:
         // Anything After Switch Statement still needed after modifying values goes here
@@ -80,7 +79,6 @@ public class DemoKeyboard : MonoBehaviour
             goto InputReceived;
         }
         // Default Case Goes Here
-        Debug.Log("Default Case Input Released");
         return;
     InputReceived:
         // Anything After Switch Statement still needed after modifying values goes here
