@@ -13,18 +13,23 @@ MonoBehaviour:
   m_Name: Input Manager
   m_EditorClassIdentifier: 
   inputActionsData:
-  - Binding: <Keyboard>/w
+  - Key: Move Forward
+    Binding: <Keyboard>/w
+    ActionType: 0
     InputType: {fileID: 11400000, guid: cb50e95c192eb5747b03e055563c4aea, type: 2}
+  - Key: Move Left
+    Binding: <Keyboard>/a
     ActionType: 0
-  - Binding: <Keyboard>/a
     InputType: {fileID: 11400000, guid: 24e32b365b9133a4784c8d639c94d18a, type: 2}
+  - Key: Move Backward
+    Binding: <Keyboard>/s
     ActionType: 0
-  - Binding: <Keyboard>/s
     InputType: {fileID: 11400000, guid: e571af04e5e84b14899f43ea8cda41ac, type: 2}
+  - Key: Move Right
+    Binding: <Keyboard>/d
     ActionType: 0
-  - Binding: <Keyboard>/d
     InputType: {fileID: 11400000, guid: 7e74df9bfd6d6d041abacf9c7c344a13, type: 2}
+  - Key: Look
+    Binding: <Mouse>/delta
     ActionType: 0
-  - Binding: <Mouse>/delta
     InputType: {fileID: 11400000, guid: 6fd52f953ba4bad448c093a8b7c90809, type: 2}
-    ActionType: 0
