@@ -459,7 +459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351ababc93d9cb841adada3371768e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputManager: {fileID: 11400000, guid: 331e6b6fd1db64f40a2b5f5e5df9e3cd, type: 2}
+  click: {fileID: 11400000, guid: 0b4f428425b087c4bba81efaf590bd6b, type: 2}
   health:
-    isConstantUsed: 0
-    variable: {fileID: 0}
-    valueOfConstant: 0
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
