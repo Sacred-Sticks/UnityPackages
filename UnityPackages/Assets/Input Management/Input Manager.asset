@@ -33,3 +33,7 @@ MonoBehaviour:
     Binding: <Mouse>/delta
     ActionType: 0
     InputType: {fileID: 11400000, guid: 6fd52f953ba4bad448c093a8b7c90809, type: 2}
+  - Key: Click
+    Binding: <Mouse>/leftButton
+    ActionType: 0
+    InputType: {fileID: 11400000, guid: c52281b356e8d4244b369a6a495e3a47, type: 2}
