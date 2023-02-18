@@ -1,14 +1,14 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FloatVariable", menuName = "Variables/FloatVariable")]
-public class FloatVariable : ScriptableObject
+[CreateAssetMenu(fileName = "IntVariable", menuName = "Variables/IntVariable")]
+public class IntVariable : ScriptableObject
 {
-    [SerializeField] private float value;
+    [SerializeField] private int value;
     [SerializeField] private bool resetValue;
     [ConditionalHide("resetValue", true)]
-    [SerializeField] private float initialValue;
+    [SerializeField] private int initialValue;
 
-    public float Value
+    public int Value
     {
         get => value;
         set => this.value = value;
@@ -19,4 +19,5 @@ public class FloatVariable : ScriptableObject
         if (resetValue)
             value = initialValue;
     }
+
 }

@@ -2,13 +2,13 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class FloatReference
+public class BoolReference
 {
     [SerializeField] private bool UseConstant = true;
-    [SerializeField] private float ConstantValue;
-    [SerializeField] private FloatVariable Variable;
+    [SerializeField] private bool ConstantValue;
+    [SerializeField] private BoolVariable Variable;
 
-    public float Value
+    public bool Value
     {
         get => UseConstant ? ConstantValue : Variable.Value;
         set

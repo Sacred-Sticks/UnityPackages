@@ -461,7 +461,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputManager: {fileID: 11400000, guid: 331e6b6fd1db64f40a2b5f5e5df9e3cd, type: 2}
   click: {fileID: 11400000, guid: 0b4f428425b087c4bba81efaf590bd6b, type: 2}
-  health:
-    UseConstant: 1
+  FloatVariable:
+    UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 5dc760daf0ca7454499144b982cdf9cb, type: 2}
+  IntVariable:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 036f8bef66f75cb42bb9f522ddc5ecd8, type: 2}
+  BoolVariable:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 206353b1c05470e4b91deab0c223c18b, type: 2}
+  Vector2Variable:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0}
+    Variable: {fileID: 11400000, guid: 4a54c7c1a050a4446b0bceccaf80fbe1, type: 2}
+  Vector3Variable:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0, z: 0}
+    Variable: {fileID: 11400000, guid: ed5b777ad7c2377499450d54e31968c3, type: 2}
