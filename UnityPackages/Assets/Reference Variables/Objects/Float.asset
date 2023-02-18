@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Float
   m_EditorClassIdentifier: 
   value: 0
-  resetValue: 0
+  resetValue: 1
   initialValue: 0

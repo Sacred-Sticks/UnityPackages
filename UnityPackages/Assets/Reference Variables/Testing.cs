@@ -5,9 +5,9 @@ public class Testing : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     [SerializeField] private SingularReferenceEnum click;
     [Space(20)]
+    [SerializeField] private BoolReference BoolVariable;
     [SerializeField] private FloatReference FloatVariable;
     [SerializeField] private IntReference IntVariable;
-    [SerializeField] private BoolReference BoolVariable;
     [SerializeField] private Vector2Reference Vector2Variable;
     [SerializeField] private Vector3Reference Vector3Variable;
 
