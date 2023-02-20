@@ -338,7 +338,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputManager: {fileID: 11400000, guid: 331e6b6fd1db64f40a2b5f5e5df9e3cd, type: 2}
   movementEnums: {fileID: 11400000, guid: 3a8ca250b60c6474bac40433e8054f91, type: 2}
-  speed: 2
+  Forward:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 5dc760daf0ca7454499144b982cdf9cb, type: 2}
+  Left:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 5e46a12d0aa43854b829fab6d65b83d1, type: 2}
+  Backward:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 6ff95f48b205db64690b141800827aec, type: 2}
+  Right:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: e0011a150b1028b4a9e1a59e5ec35c95, type: 2}
+  Speed:
+    UseConstant: 1
+    ConstantValue: 3
+    Variable: {fileID: 0}
+  Velocity:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0, z: 0}
+    Variable: {fileID: 11400000, guid: ed5b777ad7c2377499450d54e31968c3, type: 2}
 --- !u!54 &1385287097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -440,7 +463,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385287095}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 946795fc36ba6a845b64bc0d9eceeb0e, type: 3}
   m_Name: 
@@ -454,7 +477,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385287095}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 351ababc93d9cb841adada3371768e7d, type: 3}
   m_Name: 
@@ -462,22 +485,22 @@ MonoBehaviour:
   inputManager: {fileID: 11400000, guid: 331e6b6fd1db64f40a2b5f5e5df9e3cd, type: 2}
   click: {fileID: 11400000, guid: 0b4f428425b087c4bba81efaf590bd6b, type: 2}
   BoolVariable:
-    UseConstant: 0
+    UseConstant: 1
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 206353b1c05470e4b91deab0c223c18b, type: 2}
   FloatVariable:
-    UseConstant: 0
+    UseConstant: 1
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 5dc760daf0ca7454499144b982cdf9cb, type: 2}
   IntVariable:
-    UseConstant: 0
+    UseConstant: 1
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 036f8bef66f75cb42bb9f522ddc5ecd8, type: 2}
   Vector2Variable:
-    UseConstant: 0
+    UseConstant: 1
     ConstantValue: {x: 0, y: 0}
     Variable: {fileID: 11400000, guid: 4a54c7c1a050a4446b0bceccaf80fbe1, type: 2}
   Vector3Variable:
-    UseConstant: 0
+    UseConstant: 1
     ConstantValue: {x: 0, y: 0, z: 0}
     Variable: {fileID: 11400000, guid: ed5b777ad7c2377499450d54e31968c3, type: 2}

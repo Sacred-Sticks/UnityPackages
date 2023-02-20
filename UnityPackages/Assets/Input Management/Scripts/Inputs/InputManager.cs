@@ -8,6 +8,7 @@ public class PlayerInputArguments : EventArgs
     public InputAction.CallbackContext Context { get; set; }
     public string Binding { get; set; }
     public EnumerableObject InputType { get; set; }
+    public GenericVariable Variable;
 }
 
 [CreateAssetMenu]
@@ -20,6 +21,7 @@ public class InputManager : ScriptableObject
         public string Binding;
         public InputActionType ActionType;
         public EnumerableObject InputType;
+        public GenericVariable Variable;
     }
     [SerializeField] private List<InputActionsData> inputActionsData;
 
@@ -37,19 +39,22 @@ public class InputManager : ScriptableObject
         foreach (var inputData in inputActionsData)
         {
             action = new(type: inputData.ActionType, binding: inputData.Binding);
-            action.performed += context => CallInputEvents(context: context, inputType: inputData.InputType);
-            action.canceled += context => CallInputEvents(context: context, inputType: inputData.InputType);
+            action.performed += context => CallInputEvents(context: context, inputType: inputData.InputType, inputData.Variable);
+            action.canceled += context => CallInputEvents(context: context, inputType: inputData.InputType, inputData.Variable);
             SetActionPath(action: action, binding: inputData.Binding);
             InputActions.Add(action);
         }
+
+        OnInputEvent += ReceiveInput;
     }
 
-    private void CallInputEvents(InputAction.CallbackContext context, EnumerableObject inputType)
+    private void CallInputEvents(InputAction.CallbackContext context, EnumerableObject inputType, GenericVariable variable)
     {
         PlayerInputArguments args = new()
         {
             Context = context,
-            InputType = inputType
+            InputType = inputType,
+            Variable = variable,
         };
         OnInputEvent?.Invoke(this, args);
         if (context.performed)
@@ -67,5 +72,41 @@ public class InputManager : ScriptableObject
     {
         action.ChangeBinding(0).WithPath(binding);
         action.Enable();
+    }
+
+    private void ReceiveInput(object sender, PlayerInputArguments e)
+    {
+        if (e.Variable == null)
+            return;
+        if (e.Variable.GetType() == typeof(FloatVariable))
+        {
+            var variable = e.Variable as FloatVariable;
+            variable.Value = e.Context.ReadValue<float>();
+        }
+
+        if (e.Variable.GetType() == typeof(BoolVariable))
+        {
+            var variable = e.Variable as BoolVariable;
+            variable.Value = e.Context.ReadValue<bool>();
+        }
+
+        if (e.Variable.GetType() == typeof(IntVariable))
+        {
+            var variable = e.Variable as IntVariable;
+            variable.Value = e.Context.ReadValue<int>();
+        }
+
+        if (e.Variable.GetType() == typeof(Vector2Variable))
+        {
+            var variable = e.Variable as Vector2Variable;
+            variable.Value = e.Context.ReadValue<Vector2>();
+        }
+
+        if (e.Variable.GetType() == typeof(Vector3Variable))
+        {
+            var variable = e.Variable as Vector3Variable;
+            variable.Value = e.Context.ReadValue<Vector3>();
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GenericVariable<TDataType> : ScriptableObject
+public class GenericVariable<TDataType> : GenericVariable
 {
     [SerializeField] private TDataType value;
     [SerializeField] private bool resetValue;
@@ -18,5 +18,10 @@ public class GenericVariable<TDataType> : ScriptableObject
         if (resetValue)
             value = initialValue;
     }
+
+}
+
+public class GenericVariable : ScriptableObject
+{
 
 }
