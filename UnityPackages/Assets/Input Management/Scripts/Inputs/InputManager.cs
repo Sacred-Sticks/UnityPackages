@@ -20,7 +20,6 @@ public class InputManager : ScriptableObject
         public string Key;
         public string Binding;
         public InputActionType ActionType;
-        public EnumerableObject InputType;
         public GenericVariable Variable;
     }
     [SerializeField] private List<InputActionsData> inputActionsData;
@@ -39,8 +38,8 @@ public class InputManager : ScriptableObject
         foreach (var inputData in inputActionsData)
         {
             action = new(type: inputData.ActionType, binding: inputData.Binding);
-            action.performed += context => CallInputEvents(context: context, inputType: inputData.InputType, inputData.Variable);
-            action.canceled += context => CallInputEvents(context: context, inputType: inputData.InputType, inputData.Variable);
+            action.performed += context => CallInputEvents(context: context, inputData.Variable);
+            action.canceled += context => CallInputEvents(context: context, inputData.Variable);
             SetActionPath(action: action, binding: inputData.Binding);
             InputActions.Add(action);
         }
@@ -48,12 +47,11 @@ public class InputManager : ScriptableObject
         OnInputEvent += ReceiveInput;
     }
 
-    private void CallInputEvents(InputAction.CallbackContext context, EnumerableObject inputType, GenericVariable variable)
+    private void CallInputEvents(InputAction.CallbackContext context, GenericVariable variable)
     {
         PlayerInputArguments args = new()
         {
             Context = context,
-            InputType = inputType,
             Variable = variable,
         };
         OnInputEvent?.Invoke(this, args);

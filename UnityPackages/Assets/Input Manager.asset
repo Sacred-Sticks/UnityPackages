@@ -43,3 +43,8 @@ MonoBehaviour:
     ActionType: 0
     InputType: {fileID: 11400000, guid: c52281b356e8d4244b369a6a495e3a47, type: 2}
     Variable: {fileID: 11400000, guid: 2086bef8bab94d349afb37731cd1f10e, type: 2}
+  - Key: Interact
+    Binding: <Keyboard>/e
+    ActionType: 0
+    InputType: {fileID: 11400000, guid: 6520d3685e069ae4f8969d751a021a7a, type: 2}
+    Variable: {fileID: 11400000, guid: 6e498b264f361f049af56b304eaa1981, type: 2}
