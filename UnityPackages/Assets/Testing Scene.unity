@@ -314,9 +314,6 @@ GameObject:
   - component: {fileID: 1385287099}
   - component: {fileID: 1385287098}
   - component: {fileID: 1385287097}
-  - component: {fileID: 1385287096}
-  - component: {fileID: 1385287102}
-  - component: {fileID: 1385287103}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -324,44 +321,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1385287096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385287095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba66dbc0bd23c85438fae4ff52a65b45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 11400000, guid: 331e6b6fd1db64f40a2b5f5e5df9e3cd, type: 2}
-  movementEnums: {fileID: 11400000, guid: 3a8ca250b60c6474bac40433e8054f91, type: 2}
-  Forward:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 5dc760daf0ca7454499144b982cdf9cb, type: 2}
-  Left:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 5e46a12d0aa43854b829fab6d65b83d1, type: 2}
-  Backward:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 6ff95f48b205db64690b141800827aec, type: 2}
-  Right:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: e0011a150b1028b4a9e1a59e5ec35c95, type: 2}
-  Speed:
-    UseConstant: 1
-    ConstantValue: 3
-    Variable: {fileID: 0}
-  Velocity:
-    UseConstant: 0
-    ConstantValue: {x: 0, y: 0, z: 0}
-    Variable: {fileID: 11400000, guid: ed5b777ad7c2377499450d54e31968c3, type: 2}
 --- !u!54 &1385287097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -456,51 +415,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1385287102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385287095}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 946795fc36ba6a845b64bc0d9eceeb0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 11400000, guid: 331e6b6fd1db64f40a2b5f5e5df9e3cd, type: 2}
-  lookInput: {fileID: 11400000, guid: bbc4b9b09cb35ae4cbb069cbab10ec7f, type: 2}
---- !u!114 &1385287103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385287095}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 351ababc93d9cb841adada3371768e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 11400000, guid: 331e6b6fd1db64f40a2b5f5e5df9e3cd, type: 2}
-  click: {fileID: 11400000, guid: 0b4f428425b087c4bba81efaf590bd6b, type: 2}
-  BoolVariable:
-    UseConstant: 1
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 206353b1c05470e4b91deab0c223c18b, type: 2}
-  FloatVariable:
-    UseConstant: 1
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 5dc760daf0ca7454499144b982cdf9cb, type: 2}
-  IntVariable:
-    UseConstant: 1
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 036f8bef66f75cb42bb9f522ddc5ecd8, type: 2}
-  Vector2Variable:
-    UseConstant: 1
-    ConstantValue: {x: 0, y: 0}
-    Variable: {fileID: 11400000, guid: 4a54c7c1a050a4446b0bceccaf80fbe1, type: 2}
-  Vector3Variable:
-    UseConstant: 1
-    ConstantValue: {x: 0, y: 0, z: 0}
-    Variable: {fileID: 11400000, guid: ed5b777ad7c2377499450d54e31968c3, type: 2}

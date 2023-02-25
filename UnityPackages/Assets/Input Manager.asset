@@ -13,38 +13,80 @@ MonoBehaviour:
   m_Name: Input Manager
   m_EditorClassIdentifier: 
   inputActionsData:
-  - Key: Move Forward
-    Binding: <Keyboard>/w
-    ActionType: 0
-    InputType: {fileID: 11400000, guid: cb50e95c192eb5747b03e055563c4aea, type: 2}
-    Variable: {fileID: 11400000, guid: 5dc760daf0ca7454499144b982cdf9cb, type: 2}
-  - Key: Move Left
-    Binding: <Keyboard>/a
-    ActionType: 0
-    InputType: {fileID: 11400000, guid: 24e32b365b9133a4784c8d639c94d18a, type: 2}
-    Variable: {fileID: 11400000, guid: 5e46a12d0aa43854b829fab6d65b83d1, type: 2}
-  - Key: Move Backward
-    Binding: <Keyboard>/s
-    ActionType: 0
-    InputType: {fileID: 11400000, guid: e571af04e5e84b14899f43ea8cda41ac, type: 2}
-    Variable: {fileID: 11400000, guid: 6ff95f48b205db64690b141800827aec, type: 2}
-  - Key: Move Right
-    Binding: <Keyboard>/d
-    ActionType: 0
-    InputType: {fileID: 11400000, guid: 7e74df9bfd6d6d041abacf9c7c344a13, type: 2}
-    Variable: {fileID: 11400000, guid: e0011a150b1028b4a9e1a59e5ec35c95, type: 2}
-  - Key: Look
-    Binding: <Mouse>/delta
-    ActionType: 0
-    InputType: {fileID: 11400000, guid: 6fd52f953ba4bad448c093a8b7c90809, type: 2}
-    Variable: {fileID: 11400000, guid: 4a54c7c1a050a4446b0bceccaf80fbe1, type: 2}
-  - Key: Click
-    Binding: <Mouse>/leftButton
-    ActionType: 0
-    InputType: {fileID: 11400000, guid: c52281b356e8d4244b369a6a495e3a47, type: 2}
-    Variable: {fileID: 11400000, guid: 2086bef8bab94d349afb37731cd1f10e, type: 2}
-  - Key: Interact
-    Binding: <Keyboard>/e
-    ActionType: 0
-    InputType: {fileID: 11400000, guid: 6520d3685e069ae4f8969d751a021a7a, type: 2}
-    Variable: {fileID: 11400000, guid: 6e498b264f361f049af56b304eaa1981, type: 2}
+  - binding: <Keyboard>/w
+    actionType: 0
+    variable: {fileID: 11400000, guid: 5dc760daf0ca7454499144b982cdf9cb, type: 2}
+  - binding: <Keyboard>/a
+    actionType: 0
+    variable: {fileID: 11400000, guid: 5e46a12d0aa43854b829fab6d65b83d1, type: 2}
+  - binding: <Keyboard>/s
+    actionType: 0
+    variable: {fileID: 11400000, guid: 6ff95f48b205db64690b141800827aec, type: 2}
+  - binding: <Keyboard>/d
+    actionType: 0
+    variable: {fileID: 11400000, guid: e0011a150b1028b4a9e1a59e5ec35c95, type: 2}
+  inputActions:
+  - m_Name: Element 0
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 04b0c4c5-b442-4649-bb9d-fecf2c81ec59
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 44db82f4-b996-4c7f-ac25-1444ba5a7203
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Element 0
+      m_Flags: 0
+    m_Flags: 0
+  - m_Name: Element 1
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 371d25ab-0bd3-4abb-a69b-42872eaaa402
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ee84cd39-0185-4515-a029-ed4039135a49
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Element 1
+      m_Flags: 0
+    m_Flags: 0
+  - m_Name: Element 2
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: daa8857b-30cb-4048-88b2-2db8b682c332
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 1f7803c1-b832-4377-b607-c6271c4017bb
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Element 2
+      m_Flags: 0
+    m_Flags: 0
+  - m_Name: Element 3
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9b75c817-b4d4-4b37-9896-e8e57b04da1c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 33923f81-3b45-4311-8d00-25d19957708c
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Element 3
+      m_Flags: 0
+    m_Flags: 0

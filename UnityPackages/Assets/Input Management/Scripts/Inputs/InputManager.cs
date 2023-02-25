@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerInputArguments : EventArgs
 {
     public InputAction.CallbackContext Context { get; set; }
     public string Binding { get; set; }
-    public EnumerableObject InputType { get; set; }
     public GenericVariable Variable;
 }
 
@@ -17,10 +17,9 @@ public class InputManager : ScriptableObject
     [Serializable]
     private struct InputActionsData
     {
-        public string Key;
-        public string Binding;
-        public InputActionType ActionType;
-        public GenericVariable Variable;
+        public string binding;
+        public InputActionType actionType;
+        public GenericVariable variable;
     }
     [SerializeField] private List<InputActionsData> inputActionsData;
 
@@ -29,19 +28,19 @@ public class InputManager : ScriptableObject
     public event OnInput OnInputEvent;
     public event OnInput OnInputPressedEvent;
     public event OnInput OnInputReleasedEvent;
-    public List<InputAction> InputActions { get; private set; }
+    [SerializeField] private List<InputAction> inputActions;
 
     private void OnEnable()
     {
-        InputActions = new();
+        inputActions = new List<InputAction>();
         InputAction action;
         foreach (var inputData in inputActionsData)
         {
-            action = new(type: inputData.ActionType, binding: inputData.Binding);
-            action.performed += context => CallInputEvents(context: context, inputData.Variable);
-            action.canceled += context => CallInputEvents(context: context, inputData.Variable);
-            SetActionPath(action: action, binding: inputData.Binding);
-            InputActions.Add(action);
+            action = new(type: inputData.actionType, binding: inputData.binding);
+            action.performed += context => CallInputEvents(context: context, inputData.variable);
+            action.canceled += context => CallInputEvents(context: context, inputData.variable);
+            SetActionPath(action: action, binding: inputData.binding);
+            inputActions.Add(action);
         }
 
         OnInputEvent += ReceiveInput;
