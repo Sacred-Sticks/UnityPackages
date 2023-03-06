@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9757701d48367974193359b6398c112d, type: 3}
+  m_Name: Input Manager
+  m_EditorClassIdentifier: 
+  inputEvent: {fileID: 11400000, guid: 6afc5793b5c616d4a99c608328fc031f, type: 2}
+  inputActionsData:
+  - binding: <Keyboard>/w
+    actionType: 0
+    variable: {fileID: 11400000, guid: 5dc760daf0ca7454499144b982cdf9cb, type: 2}
+  - binding: <Keyboard>/a
+    actionType: 0
+    variable: {fileID: 11400000, guid: 5e46a12d0aa43854b829fab6d65b83d1, type: 2}
+  - binding: <Keyboard>/s
+    actionType: 0
+    variable: {fileID: 11400000, guid: 6ff95f48b205db64690b141800827aec, type: 2}
+  - binding: <Keyboard>/d
+    actionType: 0
+    variable: {fileID: 11400000, guid: e0011a150b1028b4a9e1a59e5ec35c95, type: 2}
+  inputActions:
+  - m_Name: Element 0
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 88e2ffa4-b339-4029-aaf4-50df2f724253
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 50f053b3-082b-4f60-adc4-92677391e575
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Element 0
+      m_Flags: 0
+    m_Flags: 0
+  - m_Name: Element 1
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9a4597d1-4395-425f-a61c-9140880225e8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 07af5876-5be5-44c4-8e1a-5384c9e12f44
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Element 1
+      m_Flags: 0
+    m_Flags: 0
+  - m_Name: Element 2
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 13020d13-f191-42fa-990f-faeb8b6b2d7f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 05c16ba2-7c53-4f23-97cc-b1efdcbb1005
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Element 2
+      m_Flags: 0
+    m_Flags: 0
+  - m_Name: Element 3
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 18dba102-8f69-416b-b82d-6b7c2dc44a1e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f6c822c5-967d-4526-b3be-5c5815c32196
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Element 3
+      m_Flags: 0
+    m_Flags: 0
