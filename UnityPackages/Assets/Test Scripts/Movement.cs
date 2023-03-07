@@ -1,8 +1,6 @@
-using System;
 using Essentials.Groups;
 using Essentials.References;
 using UnityEngine;
-
 [RequireComponent(typeof(Rigidbody))]
 public class Movement : MonoBehaviour
 {

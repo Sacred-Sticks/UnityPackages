@@ -3,116 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects/Click.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects/Click.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects/Mouse Look.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects/Mouse Look.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects/Move Down.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects/Move Down.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects/Move Left.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects/Move Left.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects/Move Right.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects/Move Right.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects/Move Up.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enumerated Objects/Move Up.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enums.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enums/Click.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enums/Click.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enums/Look.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enums/Look.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enums/Movement.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Objects/Enums/Movement.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Inputs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Inputs/Enums.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Inputs/Enums.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Inputs/InputManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Inputs/InputManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Reference Enums.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Reference Enums/Enum Types.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Reference Enums/Enum Types/BidirectionalReferenceEnum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Reference Enums/Enum Types/BidirectionalReferenceEnum.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Reference Enums/Enum Types/ReferenceEnum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Reference Enums/Enum Types/ReferenceEnum.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Reference Enums/Enum Types/SingularReferenceEnum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Reference Enums/Enum Types/SingularReferenceEnum.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Reference Enums/Enum Types/ToggleReferenceEnum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Reference Enums/Enum Types/ToggleReferenceEnum.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Reference Enums/EnumerableObject.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Management/Scripts/Reference Enums/EnumerableObject.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Manager.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Manager.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Interact.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Interact.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Backwards.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Backwards.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Forwards.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Forwards.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Interact.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Interact.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Left-Click.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Left-Click.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Left.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Left.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Mouse-Delta.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Mouse-Delta.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Right.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Inputs/Right.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Outputs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Outputs/Velocity.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Objects/Outputs/Velocity.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Attributes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Attributes/ConditionalHideAttridute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Attributes/ConditionalHideAttridute.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/References.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/References/BoolReferenceDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/References/BoolReferenceDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/References/FloatReferenceDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/References/FloatReferenceDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/References/IntReferenceDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/References/IntReferenceDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/References/Vector2ReferenceDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/References/Vector2ReferenceDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/References/Vector3ReferenceDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/References/Vector3ReferenceDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/Variables.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/Variables/BoolVariableEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/Variables/BoolVariableEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/Variables/ConditionalHidePropertyDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Editor/Variables/ConditionalHidePropertyDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/References.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/References/BoolReference.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/References/BoolReference.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/References/FloatReference.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/References/FloatReference.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/References/IntReference.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/References/IntReference.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/References/Vector2Reference.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/References/Vector2Reference.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/References/Vector3Reference.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/References/Vector3Reference.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables/BoolVariable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables/BoolVariable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables/FloatVariable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables/FloatVariable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables/GenericVariable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables/GenericVariable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables/IntVariable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables/IntVariable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables/Vector2Variable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables/Vector2Variable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables/Vector3Variable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reference Variables/Scripts/Variables/Vector3Variable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Testing Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Testing Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,9 +13,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Essentials/Events/EventArgumentTypes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Essentials/Events/EventChain.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/TridirectionalFloat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/VariableList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -179,10 +74,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="32632">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="32632" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -203,6 +98,7 @@
       <workItem from="1677295352313" duration="77000" />
       <workItem from="1677295439226" duration="457000" />
       <workItem from="1678138070412" duration="5968000" />
+      <workItem from="1678207768533" duration="573000" />
     </task>
     <servers />
   </component>
