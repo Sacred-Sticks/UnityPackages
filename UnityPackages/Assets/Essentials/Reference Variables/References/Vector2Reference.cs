@@ -1,29 +1,31 @@
 using System;
 using Essentials.Variables;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 namespace Essentials.References
 {
     [Serializable]
     public class Vector2Reference
     {
-        [SerializeField] private bool UseConstant = true;
-        [SerializeField] private Vector2 ConstantValue;
-        [SerializeField] private Vector2Variable Variable;
+        [SerializeField] private bool useConstant = true;
+        [SerializeField] private Vector2 constantValue;
+        [SerializeField] private Vector2Variable variable;
 
         public Vector2 Value
         {
             get
             {
-                return UseConstant ? ConstantValue : Variable.Value;
+                return useConstant ? constantValue : variable.Value;
             }
             set
             {
-                if (UseConstant)
+                if (useConstant)
                 {
-                    ConstantValue = value;
+                    constantValue = value;
                     return;
                 }
-                Variable.Value = value;
+                variable.Value = value;
             }
         }
     }

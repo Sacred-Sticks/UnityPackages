@@ -16,7 +16,7 @@ public class FloatReferenceDrawer : PropertyDrawer
         var inputRect = new Rect(position.x + 20, position.y, position.width - 20, position.height);
 
         //get bool property
-        var useConstantProp = property.FindPropertyRelative("UseConstant");
+        var useConstantProp = property.FindPropertyRelative("useConstant");
 
         // remove background
         GUI.backgroundColor = new Color(0, 0, 0, 0);
@@ -38,11 +38,11 @@ public class FloatReferenceDrawer : PropertyDrawer
         // show appropriate input
         if (useConstantProp.boolValue)
         {
-            EditorGUI.PropertyField(inputRect, property.FindPropertyRelative("ConstantValue"), GUIContent.none);
+            EditorGUI.PropertyField(inputRect, property.FindPropertyRelative("constantValue"), GUIContent.none);
         }
         else
         {
-            EditorGUI.PropertyField(inputRect, property.FindPropertyRelative("Variable"), GUIContent.none);
+            EditorGUI.PropertyField(inputRect, property.FindPropertyRelative("variable"), GUIContent.none);
         }
         EditorGUI.indentLevel = indent;
         EditorGUI.EndProperty();

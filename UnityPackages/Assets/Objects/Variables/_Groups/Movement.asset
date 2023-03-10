@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48fcb6e9b14862e4796698d276ae14b3, type: 3}
   m_Name: Movement
   m_EditorClassIdentifier: 
-  up: {fileID: 11400000, guid: 5dc760daf0ca7454499144b982cdf9cb, type: 2}
-  down: {fileID: 11400000, guid: 6ff95f48b205db64690b141800827aec, type: 2}
-  right: {fileID: 11400000, guid: e0011a150b1028b4a9e1a59e5ec35c95, type: 2}
-  left: {fileID: 11400000, guid: 5e46a12d0aa43854b829fab6d65b83d1, type: 2}
+  Up: {fileID: 11400000, guid: 5dc760daf0ca7454499144b982cdf9cb, type: 2}
+  Down: {fileID: 11400000, guid: 6ff95f48b205db64690b141800827aec, type: 2}
+  Right: {fileID: 11400000, guid: e0011a150b1028b4a9e1a59e5ec35c95, type: 2}
+  Left: {fileID: 11400000, guid: 5e46a12d0aa43854b829fab6d65b83d1, type: 2}

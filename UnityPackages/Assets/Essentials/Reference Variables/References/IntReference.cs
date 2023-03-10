@@ -1,29 +1,31 @@
 using System;
 using Essentials.Variables;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 namespace Essentials.References
 {
     [Serializable]
     public class IntReference
     {
-        [SerializeField] private bool UseConstant = true;
-        [SerializeField] private int ConstantValue;
-        [SerializeField] private IntVariable Variable;
+        [SerializeField] private bool useConstant = true;
+        [SerializeField] private int constantValue;
+        [SerializeField] private IntVariable variable;
 
         public int Value
         {
             get
             {
-                return UseConstant ? ConstantValue : Variable.Value;
+                return useConstant ? constantValue : variable.Value;
             }
             set
             {
-                if (UseConstant)
+                if (useConstant)
                 {
-                    ConstantValue = value;
+                    constantValue = value;
                     return;
                 }
-                Variable.Value = value;
+                variable.Value = value;
             }
         }
     }

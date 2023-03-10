@@ -1,3 +1,4 @@
+using System;
 using Essentials.Groups;
 using Essentials.References;
 using UnityEngine;
@@ -9,15 +10,20 @@ public class Movement : MonoBehaviour
     
     private Rigidbody body;
     private float speed;
+    private Vector3 velocity;
 
     private void Awake()
     {
+        inputs.Up.ValueChanged += OnMovementValueChanged;
+        inputs.Down.ValueChanged += OnMovementValueChanged;
+        inputs.Left.ValueChanged += OnMovementValueChanged;
+        inputs.Right.ValueChanged += OnMovementValueChanged;
         body = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
+    private void OnMovementValueChanged(object sender, EventArgs e)
     {
-        var velocity = inputs.X * transform.right + inputs.Y * transform.forward;
+        velocity = inputs.X * transform.right + inputs.Y * transform.forward;
         speed = speedVar.Value;
         velocity = velocity.normalized * speed;
         body.velocity = velocity;

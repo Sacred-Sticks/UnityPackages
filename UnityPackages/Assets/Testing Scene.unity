@@ -588,9 +588,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputs: {fileID: 11400000, guid: e76f332edee10cd42a65999dfd7d14bb, type: 2}
   speedVar:
-    UseConstant: 1
-    ConstantValue: 3
-    Variable: {fileID: 0}
+    useConstant: 1
+    constantValue: 3
+    variable: {fileID: 0}
 --- !u!114 &1385287103
 MonoBehaviour:
   m_ObjectHideFlags: 0
