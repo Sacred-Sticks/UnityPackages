@@ -4,15 +4,15 @@ using UnityEngine;
 namespace Essentials.Events
 {
     [CreateAssetMenu(fileName = "Event Chain", menuName = "Events/Linker")]
-    public class EventChain : ScriptableObject
+    public class EventBus : ScriptableObject
     {
-        public delegate void Chain(object sender, EventArgs e);
+        public delegate void EventHandler(object sender, EventArgs e);
 
-        public event Chain ChainedEvent;
+        public event EventHandler Event;
 
         public void CallEvent(object sender, EventArgs e)
         {
-            ChainedEvent?.Invoke(sender, e);
+            Event?.Invoke(sender, e);
         }
     }
 }

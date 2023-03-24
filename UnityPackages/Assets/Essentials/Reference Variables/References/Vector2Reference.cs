@@ -28,5 +28,13 @@ namespace Essentials.References
                 variable.Value = value;
             }
         }
+
+        public Vector2Variable Variable
+        {
+            get
+            {
+                return variable;
+            }
+        }
     }
 }

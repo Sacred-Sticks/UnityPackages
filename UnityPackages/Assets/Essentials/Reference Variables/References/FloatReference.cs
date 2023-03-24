@@ -29,5 +29,13 @@ namespace Essentials.References
 
             }
         }
+
+        public FloatVariable Variable
+        {
+            get
+            {
+                return variable;
+            }
+        }
     }
 }

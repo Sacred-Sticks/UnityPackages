@@ -28,5 +28,13 @@ namespace Essentials.References
                 variable.Value = value;
             }
         }
+
+        public IntVariable Variable
+        {
+            get
+            {
+                return variable;
+            }
+        }
     }
 }

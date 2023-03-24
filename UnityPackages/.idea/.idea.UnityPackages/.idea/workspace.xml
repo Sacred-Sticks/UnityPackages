@@ -3,22 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/BoolReferenceDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/BoolReferenceDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/FloatReferenceDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/FloatReferenceDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/IntReferenceDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/IntReferenceDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/Vector2ReferenceDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/Vector2ReferenceDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/BidirectionalFloat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/BidirectionalFloat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/DirectionalFloat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/DirectionalFloat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/TridirectionalFloat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/TridirectionalFloat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/BoolReference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/BoolReference.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/FloatReference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/FloatReference.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/IntReference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/IntReference.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/Vector2Reference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/Vector2Reference.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/Vector3Reference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/Vector3Reference.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/GenericVariable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/GenericVariable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Objects/Variables/_Groups/Movement.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Objects/Variables/_Groups/Movement.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Testing Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Testing Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventArgumentTypes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventArgumentTypes.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventChain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventChain.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Inputs/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Inputs/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +18,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/16/a9c7196b/EventArgs.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Essentials/Events/EventArgumentTypes.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Essentials/Events/EventChain.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/TridirectionalFloat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/VariableList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -118,6 +108,9 @@
       <workItem from="1678233086827" duration="277000" />
       <workItem from="1678416827697" duration="1162000" />
       <workItem from="1678418061321" duration="1059000" />
+      <workItem from="1678893179276" duration="616000" />
+      <workItem from="1679344822396" duration="724000" />
+      <workItem from="1679516365595" duration="313000" />
     </task>
     <servers />
   </component>
@@ -137,10 +130,10 @@
           <line>42</line>
           <properties documentPath="C:\Users\Ackma\OneDrive\Documents\GitHub\UnityPackages\UnityPackages\Assets\Essentials\Inputs\InputManager.cs" initialLine="42" containingFunctionPresentation="method 'OnEnable'">
             <startOffsets>
-              <option value="1457" />
+              <option value="1455" />
             </startOffsets>
             <endOffsets>
-              <option value="1497" />
+              <option value="1488" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

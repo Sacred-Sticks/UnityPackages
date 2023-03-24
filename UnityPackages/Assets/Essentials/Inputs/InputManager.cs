@@ -17,7 +17,7 @@ namespace Essentials.Inputs
     [CreateAssetMenu]
     public class InputManager : ScriptableObject
     {
-        [SerializeField] private EventChain inputEvent;
+        [SerializeField] private EventBus inputEvent;
         [SerializeField] private List<InputActionsData> inputActionsData;
         [SerializeField] private List<InputAction> inputActions;
         
@@ -40,7 +40,7 @@ namespace Essentials.Inputs
                 inputActions.Add(action);
             }
 
-            inputEvent.ChainedEvent += ReceiveInput;
+            inputEvent.Event += ReceiveInput;
         }
 
         private void CallInputEvents(InputAction.CallbackContext context, GenericVariable variable)
