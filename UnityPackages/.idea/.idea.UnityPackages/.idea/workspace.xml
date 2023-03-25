@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventArgumentTypes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventArgumentTypes.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventChain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventChain.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Inputs/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Inputs/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +104,7 @@
       <workItem from="1678893179276" duration="616000" />
       <workItem from="1679344822396" duration="724000" />
       <workItem from="1679516365595" duration="313000" />
+      <workItem from="1679618206441" duration="408000" />
     </task>
     <servers />
   </component>
