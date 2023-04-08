@@ -1,22 +1,36 @@
-using System;
 using Essentials.Events;
 using UnityEngine;
 
 public class TakeData : MonoBehaviour
 {
-    [SerializeField] private EventBus eventReceiver;
     [SerializeField] private Movement mover;
-    
+
+    private const string eventKey = "SendMover";
+
     private void Awake()
     {
-        eventReceiver.Event += OnEventCalled;
+        EventManager.AddListener(eventKey, OnEventCalled);
     }
 
-    private void OnEventCalled(object sender, EventArgs e)
+    private void OnDestroy()
     {
-        if (e is not DataArgs dataArgs) 
-            return;
-        if (dataArgs.MonoBehaviours[0] is not Movement movement) return;
-        mover = movement;
+        EventManager.RemoveListener(eventKey, OnEventCalled);
     }
+
+    private void OnEventCalled(GameEvent e)
+    {
+        if (e is not EventCall args)
+            return;
+        mover = args.movement;
+    }
+}
+
+public sealed class EventCall : GameEvent
+{
+    public EventCall(string key, object sender, Movement movement) : base(key, sender)
+    {
+        this.movement = movement;
+    }
+
+    public Movement movement { get; }
 }

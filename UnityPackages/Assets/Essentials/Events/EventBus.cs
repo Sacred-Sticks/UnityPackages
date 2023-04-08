@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Essentials.Events
 {
-    [CreateAssetMenu(fileName = "Event Chain", menuName = "Events/Linker")]
+    [CreateAssetMenu(fileName = "On Event", menuName = "Events/Event Bus")]
     public class EventBus : ScriptableObject
     {
         public delegate void EventHandler(object sender, EventArgs e);

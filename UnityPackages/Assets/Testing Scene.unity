@@ -155,7 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016e4fe36a91d1f4987666bf2d68ce6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventReceiver: {fileID: 11400000, guid: aff1ef146da6b874fac5c9f81de88fd4, type: 2}
   mover: {fileID: 0}
 --- !u!65 &106648158
 BoxCollider:
@@ -603,6 +602,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da3403ac02f47545a3fddfe08987431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventTarget: {fileID: 11400000, guid: aff1ef146da6b874fac5c9f81de88fd4, type: 2}
-  dataSet:
-  - {fileID: 1385287102}
+  mover: {fileID: 1385287102}
