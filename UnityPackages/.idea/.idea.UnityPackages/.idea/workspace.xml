@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Essentials/Events/EventManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Events/EventManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Objects/Events.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Objects/Events/E.Movement.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Objects/Events/E.Movement.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +11,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/16/a9c7196b/EventArgs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Essentials/Events/EventManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/TridirectionalFloat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/VariableList.cs" root0="FORCE_HIGHLIGHTING" />
@@ -116,7 +108,7 @@
       <workItem from="1679618206441" duration="408000" />
       <workItem from="1680552387070" duration="264000" />
       <workItem from="1680937044750" duration="3109000" />
-      <workItem from="1680940686371" duration="2448000" />
+      <workItem from="1680940686371" duration="2748000" />
     </task>
     <servers />
   </component>
