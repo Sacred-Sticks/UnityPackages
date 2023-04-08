@@ -1,29 +1,12 @@
-using System.Collections.Generic;
 using Essentials.Events;
 using UnityEngine;
-using System;
+
 public class SendData : MonoBehaviour
 {
-    [SerializeField] private EventBus eventTarget;
-    [SerializeField] private List<MonoBehaviour> dataSet;
+    [SerializeField] private Movement mover;
 
-    private void Start()
+    private void Awake()
     {
-        var e = new DataArgs(dataset: dataSet);
-        eventTarget.CallEvent(this, e);
-    }
-}
-
-public class DataArgs : EventArgs
-{
-    public List<MonoBehaviour> MonoBehaviours
-    {
-        get;
-        set;
-    }
-
-    public DataArgs(List<MonoBehaviour> dataset)
-    {
-        MonoBehaviours = dataset;
+        EventManager.Trigger(new EventCall("SendMover", this, mover));
     }
 }
