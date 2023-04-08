@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs" afterDir="false" />
-    </list>
+    <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +106,7 @@
       <workItem from="1679618206441" duration="408000" />
       <workItem from="1680552387070" duration="264000" />
       <workItem from="1680937044750" duration="3109000" />
-      <workItem from="1680940686371" duration="2748000" />
+      <workItem from="1680940686371" duration="3346000" />
     </task>
     <servers />
   </component>
