@@ -17,7 +17,6 @@ namespace Essentials.Inputs
     [CreateAssetMenu]
     public class InputManager : ScriptableObject
     {
-        [SerializeField] private EventBus inputEvent;
         [SerializeField] private List<InputActionsData> inputActionsData;
         [SerializeField] private List<InputAction> inputActions;
         
@@ -28,6 +27,10 @@ namespace Essentials.Inputs
             public GenericVariable variable;
         }
 
+        private delegate void Handler(object sender, EventArgs e);
+
+        private event Handler inputEvent;
+        
         private void OnEnable()
         {
             inputActions = new List<InputAction>();
@@ -40,7 +43,7 @@ namespace Essentials.Inputs
                 inputActions.Add(action);
             }
 
-            inputEvent.Event += ReceiveInput;
+            inputEvent += ReceiveInput;
         }
 
         private void CallInputEvents(InputAction.CallbackContext context, GenericVariable variable)
@@ -50,7 +53,7 @@ namespace Essentials.Inputs
                 Context = context,
                 Variable = variable,
             };
-            inputEvent.CallEvent(this, args);
+            inputEvent?.Invoke(this, args);
         }
 
         private static void SetActionPath(InputAction action, string binding)
