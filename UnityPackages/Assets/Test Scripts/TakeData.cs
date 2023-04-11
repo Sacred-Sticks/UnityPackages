@@ -5,16 +5,16 @@ public class TakeData : MonoBehaviour
 {
     [SerializeField] private Movement mover;
 
-    private const string eventKey = "SendMover";
+    private EventCall takeMovement;
 
     private void Awake()
     {
-        EventManager.AddListener(eventKey, OnEventCalled);
+        EventManager.AddListener<EventCall>(OnEventCalled);
     }
 
     private void OnDestroy()
     {
-        EventManager.RemoveListener(eventKey, OnEventCalled);
+        EventManager.RemoveListener<EventCall>(OnEventCalled);
     }
 
     private void OnEventCalled(GameEvent e)
@@ -27,7 +27,7 @@ public class TakeData : MonoBehaviour
 
 public sealed class EventCall : GameEvent
 {
-    public EventCall(string key, object sender, Movement movement) : base(key, sender)
+    public EventCall(object sender, Movement movement) : base(sender)
     {
         this.movement = movement;
     }

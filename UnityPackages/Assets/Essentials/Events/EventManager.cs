@@ -1,50 +1,44 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Essentials.Events
 {
     public static class EventManager
     {
-        public static Dictionary<string, Action<GameEvent>> Events = new Dictionary<string, Action<GameEvent>>();
+        public static Dictionary<Type, Action<GameEvent>> Events = new Dictionary<Type, Action<GameEvent>>();
 
-        public static void AddListener(string key, Action<GameEvent> listener)
+        public static void AddListener<T>(Action<GameEvent> listener) where T : GameEvent
         {
-            if (Events.ContainsKey(key))
-                Events[key] += listener;
-            else
-                Events[key] = listener;
+            if (!Events.ContainsKey(typeof(T)))
+                Events.Add(typeof(T), null);
+
+            Events[typeof(T)] += listener;
         }
 
-        public static void RemoveListener(string key, Action<GameEvent> listener)
+        public static void RemoveListener<T>(Action<GameEvent> listener) where T : GameEvent
         {
-            if (!Events.ContainsKey(key))
+            if (!Events.ContainsKey(typeof(T)))
                 return;
-            Events[key] -= listener;
+            Events[typeof(T)] -= listener;
         }
 
-        public static void Trigger<TEventArgs>(TEventArgs arguments) where TEventArgs : GameEvent
+        public static void Trigger<T>(T arguments) where T : GameEvent
         {
-            string key = arguments.Key;
-            if (Events.TryGetValue(key, out var listeners))
-            {
-                listeners?.Invoke(arguments);
-            }
-            else
-                Debug.LogWarning($"{key} Not Found: Typo in {key} Trigger Call or {key} Subscription.");
+            if (!Events.TryGetValue(typeof(T), out var listeners))
+                return;
+            listeners?.Invoke(arguments);
         }
     }
 
     public abstract class GameEvent
     {
-        protected GameEvent(string key, object sender)
+        protected GameEvent(object sender)
         {
             Sender = sender;
-            Key = key;
         }
 
         public object Sender { get; }
-        public string Key { get; }
         
     }
 }
