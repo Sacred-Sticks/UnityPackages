@@ -1,4 +1,3 @@
-using System;
 using Essentials.Inputs;
 using UnityEngine;
 
