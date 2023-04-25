@@ -3,18 +3,19 @@ using UnityEngine;
 
 public class TakeData : MonoBehaviour
 {
+    [SerializeField] private string eventKey;
     [SerializeField] private Movement mover;
 
     private EventCall takeMovement;
 
-    private void Awake()
+    private void OnEnable()
     {
-        EventManager.AddListener<EventCall>(OnEventCalled);
+        EventManager.AddListener(eventKey, OnEventCalled);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        EventManager.RemoveListener<EventCall>(OnEventCalled);
+        EventManager.RemoveListener(eventKey, OnEventCalled);
     }
 
     private void OnEventCalled(GameEvent e)

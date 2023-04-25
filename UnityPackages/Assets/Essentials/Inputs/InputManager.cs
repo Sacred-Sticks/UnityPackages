@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Essentials.Events;
 using Essentials.Variables;
 using UnityEngine;
 using UnityEngine.InputSystem;

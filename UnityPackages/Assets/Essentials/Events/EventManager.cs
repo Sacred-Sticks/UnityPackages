@@ -5,26 +5,26 @@ namespace Essentials.Events
 {
     public static class EventManager
     {
-        public static Dictionary<Type, Action<GameEvent>> Events = new Dictionary<Type, Action<GameEvent>>();
+        public static Dictionary<string, Action<GameEvent>> Events = new Dictionary<string, Action<GameEvent>>();
 
-        public static void AddListener<T>(Action<GameEvent> listener) where T : GameEvent
+        public static void AddListener(string key, Action<GameEvent> listener)
         {
-            if (!Events.ContainsKey(typeof(T)))
-                Events.Add(typeof(T), null);
+            if (!Events.ContainsKey(key))
+                Events.Add(key, null);
 
-            Events[typeof(T)] += listener;
+            Events[key] += listener;
         }
 
-        public static void RemoveListener<T>(Action<GameEvent> listener) where T : GameEvent
+        public static void RemoveListener(string key, Action<GameEvent> listener)
         {
-            if (!Events.ContainsKey(typeof(T)))
+            if (!Events.ContainsKey(key))
                 return;
-            Events[typeof(T)] -= listener;
+            Events[key] -= listener;
         }
 
-        public static void Trigger<T>(T arguments) where T : GameEvent
+        public static void Trigger(string key, GameEvent arguments)
         {
-            if (!Events.TryGetValue(typeof(T), out var listeners))
+            if (!Events.TryGetValue(key, out var listeners))
                 return;
             listeners?.Invoke(arguments);
         }

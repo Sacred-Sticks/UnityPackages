@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class SendData : MonoBehaviour
 {
+    [SerializeField] private string eventKey;
     [SerializeField] private Movement mover;
     private EventCall sendMovement;
 
-    private void Awake()
+    private void Start()
     {
-        sendMovement = new EventCall(this, mover);
-        EventManager.Trigger(sendMovement);
+        EventManager.Trigger(eventKey, new EventCall(this, mover));
     }
 }

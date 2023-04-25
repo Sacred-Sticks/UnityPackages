@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Essentials/EnumerableObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Essentials/EnumerableObject.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Events/EventManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Inputs/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Essentials/Inputs/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +20,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/16/a9c7196b/EventArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Essentials/Events/EventManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/BidirectionalFloat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/TridirectionalFloat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/VariableList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -111,6 +118,7 @@
       <workItem from="1680937044750" duration="3109000" />
       <workItem from="1680940686371" duration="3346000" />
       <workItem from="1681233742140" duration="1762000" />
+      <workItem from="1682449968099" duration="655000" />
     </task>
     <servers />
   </component>
@@ -127,13 +135,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Essentials/Inputs/InputManager.cs</url>
-          <line>45</line>
+          <line>44</line>
           <properties documentPath="C:\Users\Ackma\OneDrive\Documents\GitHub\UnityPackages\UnityPackages\Assets\Essentials\Inputs\InputManager.cs" initialLine="42" containingFunctionPresentation="method 'OnEnable'">
             <startOffsets>
-              <option value="1520" />
+              <option value="1495" />
             </startOffsets>
             <endOffsets>
-              <option value="1547" />
+              <option value="1522" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
