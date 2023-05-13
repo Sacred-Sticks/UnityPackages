@@ -3,32 +3,29 @@ using UnityEngine;
 
 public class TakeData : MonoBehaviour
 {
-    [SerializeField] private string eventKey;
     [SerializeField] private Movement mover;
 
     private EventCall takeMovement;
 
     private void OnEnable()
     {
-        EventManager.AddListener(eventKey, OnEventCalled);
+        EventManager.AddListener<EventCall>(OnEventCalled);
     }
 
     private void OnDisable()
     {
-        EventManager.RemoveListener(eventKey, OnEventCalled);
+        EventManager.RemoveListener<EventCall>(OnEventCalled);
     }
 
-    private void OnEventCalled(GameEvent e)
+    private void OnEventCalled(EventCall args)
     {
-        if (e is not EventCall args)
-            return;
         mover = args.movement;
     }
 }
 
-public sealed class EventCall : GameEvent
+public sealed class EventCall
 {
-    public EventCall(object sender, Movement movement) : base(sender)
+    public EventCall(Movement movement)
     {
         this.movement = movement;
     }

@@ -1,43 +1,46 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 namespace Kickstarter.Events
 {
     public static class EventManager
     {
-        public static Dictionary<string, Action<GameEvent>> Events = new Dictionary<string, Action<GameEvent>>();
+        public static Dictionary<Type, List<Action<object>>> Events = new Dictionary<Type, List<Action<object>>>();
 
-        public static void AddListener(string key, Action<GameEvent> listener)
+        public static void AddListener<T>(Action<T> listener) where T : class
         {
-            if (!Events.ContainsKey(key))
-                Events.Add(key, null);
-
-            Events[key] += listener;
-        }
-
-        public static void RemoveListener(string key, Action<GameEvent> listener)
-        {
-            if (!Events.ContainsKey(key))
-                return;
-            Events[key] -= listener;
-        }
-
-        public static void Trigger(string key, GameEvent arguments)
-        {
-            if (!Events.TryGetValue(key, out var listeners))
-                return;
-            listeners?.Invoke(arguments);
-        }
-    }
-
-    public abstract class GameEvent
-    {
-        protected GameEvent(object sender)
-        {
-            Sender = sender;
-        }
-
-        public object Sender { get; }
+            var key = typeof(T);
         
+            if (!Events.ContainsKey(key))
+            {
+                Events[key] = new List<Action<object>>();
+            }
+        
+            Events[key].Add(data => listener(data as T));
+        }
+
+        public static void RemoveListener<T>(Action<T> listener) where T : class
+        {
+            var key = typeof(T);
+
+            if (Events.ContainsKey(key))
+            {
+                Events[key].Remove(data => listener(data as T));
+            }
+        }
+
+        public static void Trigger<T>(T arguments) where T : class
+        {
+            var key = typeof(T);
+
+            if (!Events.ContainsKey(key))
+                return;
+            
+            foreach (var action in Events[key])
+            {
+                action(arguments);
+            }
+        }
     }
 }
