@@ -1,5 +1,3 @@
-using System;
-using Kickstarter.Groups;
 using Kickstarter.Inputs;
 using Kickstarter.References;
 using UnityEngine;
@@ -7,28 +5,59 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private Vector2Input input;
-    [SerializeField] private FloatReference speedVar;
+    [SerializeField] private Vector2Input movementInput;
+    [SerializeField] private FloatInput jumpInput;
+    [SerializeField] private float inputTolerance;
+    [Space]
+    [SerializeField] private FloatReference speed;
+    [SerializeField] private FloatReference jumpHeight;
     
-    private Rigidbody body;
-    private float speed
+    private float Speed
     {
         get
         {
-            return speedVar.Value;
+            return speed.Value;
         }
     }
+    private float JumpHeight
+    {
+        get
+        {
+            return jumpHeight.Value;
+        }
+    }
+    
+    private Rigidbody body;
     private Vector3 velocity;
-
+    private float jumpSpeed;
+    
     private void Awake()
     {
         body = GetComponent<Rigidbody>();
-        input.ValueChanged += OnInputChanged;
+        movementInput.ValueChanged += OnMovementInputChanged;
+        jumpInput.ValueChanged += JumpInputValueChanged;
     }
 
-    private void OnInputChanged()
+    private void Start()
     {
-        var direction = new Vector3(input.Value.x, 0, input.Value.y);
-        body.velocity = direction * speed;
+        jumpSpeed = Mathf.Sqrt(2 * -Physics.gravity.y * JumpHeight);
+    }
+
+    private void JumpInputValueChanged()
+    {
+        if (jumpInput.Value < inputTolerance)
+            return;
+        body.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
+    }
+
+    private void OnMovementInputChanged()
+    {
+        var direction = movementInput.Value.x * transform.right + movementInput.Value.y * transform.forward;
+        velocity = direction * Speed;
+    }
+
+    private void FixedUpdate()
+    {
+        body.velocity = velocity + body.velocity.y * Vector3.up;
     }
 }

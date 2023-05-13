@@ -3,76 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventBus.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Events/EventManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Inputs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Inputs/InputManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Inputs/InputManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Attributes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Attributes/ConditionalHideAttridute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Attributes/ConditionalHideAttridute.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/BoolReferenceDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/BoolReferenceDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/FloatReferenceDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/FloatReferenceDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/IntReferenceDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/IntReferenceDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/Vector2ReferenceDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/Vector2ReferenceDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/Vector3ReferenceDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/References/Vector3ReferenceDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/Variables.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/Variables/BoolVariableEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/Variables/BoolVariableEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/Variables/ConditionalHidePropertyDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Editor/Variables/ConditionalHidePropertyDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/BidirectionalFloat.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/BidirectionalFloat.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/DirectionalFloat.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/DirectionalFloat.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/TridirectionalFloat.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/TridirectionalFloat.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/VariableList.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Groups/VariableList.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/BoolReference.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/BoolReference.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/FloatReference.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/FloatReference.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/IntReference.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/IntReference.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/Vector2Reference.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/Vector2Reference.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/Vector3Reference.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/References/Vector3Reference.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/BoolVariable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/BoolVariable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/FloatVariable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/FloatVariable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/GenericVariable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/GenericVariable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/IntVariable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/IntVariable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/Vector2Variable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/Vector2Variable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/Vector3Variable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Essentials/Reference Variables/Variables/Vector3Variable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Objects/Input Manager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Objects/Input Manager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Objects/Inputs/m_Inputs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Objects/Inputs/m_Inputs.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Testing Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Testing Scene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,23 +32,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Ackma\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Ackma\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\Ackma\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Ackma\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Ackma\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Ackma\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe" />
@@ -182,7 +115,8 @@
       <workItem from="1680940686371" duration="3346000" />
       <workItem from="1681233742140" duration="1762000" />
       <workItem from="1682449968099" duration="655000" />
-      <workItem from="1683932982018" duration="9831000" />
+      <workItem from="1683932982018" duration="10611000" />
+      <workItem from="1683944428150" duration="1029000" />
     </task>
     <servers />
   </component>
