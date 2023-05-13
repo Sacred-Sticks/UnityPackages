@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Objects/Inputs/m_Inputs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Objects/Inputs/m_Inputs.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Testing Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Testing Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Events/EventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Events/EventManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,10 +74,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="26236">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="26236" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -116,7 +114,8 @@
       <workItem from="1681233742140" duration="1762000" />
       <workItem from="1682449968099" duration="655000" />
       <workItem from="1683932982018" duration="10611000" />
-      <workItem from="1683944428150" duration="1029000" />
+      <workItem from="1683944428150" duration="1067000" />
+      <workItem from="1683948543533" duration="610000" />
     </task>
     <servers />
   </component>
