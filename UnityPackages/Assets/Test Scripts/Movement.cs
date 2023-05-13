@@ -1,32 +1,34 @@
 using System;
-using Essentials.Groups;
-using Essentials.References;
+using Kickstarter.Groups;
+using Kickstarter.Inputs;
+using Kickstarter.References;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private BidirectionalFloat inputs;
+    [SerializeField] private Vector2Input input;
     [SerializeField] private FloatReference speedVar;
     
     private Rigidbody body;
-    private float speed;
+    private float speed
+    {
+        get
+        {
+            return speedVar.Value;
+        }
+    }
     private Vector3 velocity;
 
     private void Awake()
     {
-        inputs.Up.ValueChanged += OnMovementValueChanged;
-        inputs.Down.ValueChanged += OnMovementValueChanged;
-        inputs.Left.ValueChanged += OnMovementValueChanged;
-        inputs.Right.ValueChanged += OnMovementValueChanged;
         body = GetComponent<Rigidbody>();
+        input.ValueChanged += OnInputChanged;
     }
 
-    private void OnMovementValueChanged(object sender, EventArgs e)
+    private void OnInputChanged()
     {
-        velocity = inputs.X * transform.right + inputs.Y * transform.forward;
-        speed = speedVar.Value;
-        velocity = velocity.normalized * speed;
-        body.velocity = velocity;
+        var direction = new Vector3(input.Value.x, 0, input.Value.y);
+        body.velocity = direction * speed;
     }
 }

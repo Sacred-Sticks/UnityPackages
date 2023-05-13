@@ -1,4 +1,4 @@
-using Essentials.Inputs;
+using Kickstarter.Inputs;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,5 +12,6 @@ public class GameManager : MonoBehaviour
         if (Instance != null)
             Destroy(gameObject);
         Instance = this;
+        inputManager.Initialize();
     }
 }
