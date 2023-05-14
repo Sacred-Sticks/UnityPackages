@@ -7,11 +7,15 @@ namespace Kickstarter.Inputs
     public class BoolInput : InputAssetObject<bool>
     {
         [SerializeField] private string[] bindings;
+
         protected override void AddBindings()
         {
-            foreach (string binding in bindings)
+            foreach (var player in players)
             {
-                inputAction.AddBinding(binding);
+                foreach (string binding in bindings)
+                {
+                    player.inputAction.AddBinding(binding);
+                }
             }
         }
     }

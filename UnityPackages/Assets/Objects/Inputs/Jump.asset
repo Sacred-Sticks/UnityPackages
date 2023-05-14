@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bindings:
   - <Keyboard>/space
+  - <Gamepad>/buttonSouth

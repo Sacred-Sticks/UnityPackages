@@ -9,9 +9,12 @@ namespace Kickstarter.Inputs
         [SerializeField] private string[] bindings;
         protected override void AddBindings()
         {
-            foreach (string binding in bindings)
+            foreach (var player in players)
             {
-                inputAction.AddBinding(binding);
+                foreach (string binding in bindings)
+                {
+                    player.inputAction.AddBinding(binding);
+                }
             }
         }
     }

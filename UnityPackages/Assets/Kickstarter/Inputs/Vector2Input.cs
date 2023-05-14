@@ -8,18 +8,21 @@ namespace Kickstarter.Inputs
     {
         [SerializeField] private string[] bindings;
         [SerializeField] private TwoDimensionalBinding[] compositeBindings;
-        
+
         protected override void AddBindings()
         {
-            foreach (string binding in bindings)
-                inputAction.AddBinding(binding);
-            foreach (var binding in compositeBindings)
+            foreach (var player in players)
             {
-                inputAction.AddCompositeBinding("2DVector")
-                    .With(nameof(binding.Up), binding.Up)
-                    .With(nameof(binding.Down), binding.Down)
-                    .With(nameof(binding.Left), binding.Left)
-                    .With(nameof(binding.Right), binding.Right);
+                foreach (string binding in bindings)
+                    player.inputAction.AddBinding(binding);
+                foreach (var binding in compositeBindings)
+                {
+                    player.inputAction.AddCompositeBinding("2DVector")
+                        .With(nameof(binding.Up), binding.Up)
+                        .With(nameof(binding.Down), binding.Down)
+                        .With(nameof(binding.Left), binding.Left)
+                        .With(nameof(binding.Right), binding.Right);
+                }
             }
         }
 
