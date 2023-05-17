@@ -11,18 +11,15 @@ namespace Kickstarter.Inputs
 
         protected override void AddBindings()
         {
-            foreach (var player in players)
+            foreach (string binding in bindings)
+                inputAction.AddBinding(binding);
+            foreach (var binding in compositeBindings)
             {
-                foreach (string binding in bindings)
-                    player.inputAction.AddBinding(binding);
-                foreach (var binding in compositeBindings)
-                {
-                    player.inputAction.AddCompositeBinding("2DVector")
-                        .With(nameof(binding.Up), binding.Up)
-                        .With(nameof(binding.Down), binding.Down)
-                        .With(nameof(binding.Left), binding.Left)
-                        .With(nameof(binding.Right), binding.Right);
-                }
+                inputAction.AddCompositeBinding("2DVector")
+                    .With(nameof(binding.Up), binding.Up)
+                    .With(nameof(binding.Down), binding.Down)
+                    .With(nameof(binding.Left), binding.Left)
+                    .With(nameof(binding.Right), binding.Right);
             }
         }
 

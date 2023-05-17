@@ -57,7 +57,6 @@ public class Movement : MonoBehaviour
 
     private void OnMovementInputChange(Vector2 input)
     {
-        Debug.Log($"Updated player {playerIndex}");
         var direction = input.x * transform.right + input.y * transform.forward;
         velocity = direction * Speed;
     }

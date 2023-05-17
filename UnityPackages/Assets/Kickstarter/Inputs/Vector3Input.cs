@@ -12,26 +12,24 @@ namespace Kickstarter.Inputs
 
         protected override void AddBindings()
         {
-            foreach (var player in players)
+            foreach (string binding in bindings)
+                inputAction.AddBinding(binding);
+            foreach (var binding in compositeBindings)
             {
-                foreach (string binding in bindings)
-                    player.inputAction.AddBinding(binding);
-                foreach (var binding in compositeBindings)
-                {
-                    player.inputAction.AddCompositeBinding("3DVector")
-                        .With(nameof(binding.Up), binding.Up)
-                        .With(nameof(binding.Down), binding.Down)
-                        .With(nameof(binding.Left), binding.Left)
-                        .With(nameof(binding.Right), binding.Right)
-                        .With(nameof(binding.Forward), binding.Forward)
-                        .With(nameof(binding.Backward), binding.Backward);
-                }
+                inputAction.AddCompositeBinding("3DVector")
+                    .With(nameof(binding.Up), binding.Up)
+                    .With(nameof(binding.Down), binding.Down)
+                    .With(nameof(binding.Left), binding.Left)
+                    .With(nameof(binding.Right), binding.Right)
+                    .With(nameof(binding.Forward), binding.Forward)
+                    .With(nameof(binding.Backward), binding.Backward);
             }
         }
 
         [System.Serializable]
         private class ThreeDimensionalBinding
         {
+            [SerializeField] private string name;
             [SerializeField] private string up;
             [SerializeField] private string down;
             [SerializeField] private string left;

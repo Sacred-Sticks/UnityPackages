@@ -7,23 +7,14 @@ namespace Kickstarter.Inputs
     [CreateAssetMenu(fileName = "Input Manager", menuName = "Inputs/Input Manager")]
     public class InputManager : ScriptableObject
     {
-        [Range(1, 4)]
+        [Range(0, 4)]
         [SerializeField] private int maxPlayerCount;
         [Space(20)]
         [SerializeField] private InputAssetObject[] inputObjects;
-
-        private Gamepad[] gamepads;
-        
-        private void AssignGamepads()
-        {
-            gamepads = Gamepad.all
-                .Take(maxPlayerCount)
-                .ToArray();
-        }
         
         public void Initialize()
         {
-            AssignGamepads();
+            var gamepads = Gamepad.all.Take(maxPlayerCount).ToArray();
             foreach (var inputObject in inputObjects)
             {
                 inputObject.Initialize(gamepads);

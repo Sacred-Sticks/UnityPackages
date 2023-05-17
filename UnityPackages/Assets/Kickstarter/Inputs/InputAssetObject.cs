@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,7 +8,7 @@ namespace Kickstarter.Inputs
 {
     public abstract class InputAssetObject : ScriptableObject
     {
-        public abstract void Initialize(Gamepad[] controllers);
+        public abstract void Initialize(Gamepad[] gamepads);
         protected abstract void AddBindings();
         public abstract void EnableInput();
         public abstract void DisableInput();
@@ -15,75 +16,76 @@ namespace Kickstarter.Inputs
 
     public abstract class InputAssetObject<TType> : InputAssetObject where TType : struct
     {
-        protected class PlayerInput
+        protected readonly Dictionary<InputDevice, Action<TType>> actionMap = new Dictionary<InputDevice, Action<TType>>();
+        private InputDevice[] devices;
+        protected InputAction inputAction;
+
+        public override void Initialize(Gamepad[] gamepads)
         {
-            public PlayerInput(InputDevice[] inputDevice, InputAction inputAction)
+            devices = new InputDevice[gamepads.Length + 1];
+            inputAction = new InputAction(name: name, type: InputActionType.Value);
+            AddBindings();
+            AddRegistration();
+            StoreDevices(gamepads);
+            CreateActionMappings(gamepads);
+        }
+
+        private void AddRegistration()
+        {
+            inputAction.performed += RegisterInput;
+            inputAction.canceled += RegisterInput;
+        }
+
+        private void RegisterInput(InputAction.CallbackContext context)
+        {
+            var value = context.ReadValue<TType>();
+            var device = context.control.device;
+            switch (device)
             {
-                inputDevices = inputDevice;
-                this.inputAction = inputAction;
-                inputAction.performed += ReceiveInput;
-                inputAction.canceled += ReceiveInput;
-            }
-
-            public Action<TType> ValueChanged { get; set; }
-
-            public InputAction inputAction { get; }
-            public InputDevice[] inputDevices { get; }
-
-            public void ReceiveInput(InputAction.CallbackContext context)
-            {
-                if (inputDevices.Any(inputDevice => inputDevice == context.control.device))
-                {
-                    ValueChanged?.Invoke(context.ReadValue<TType>());
-                }
+                case Mouse:
+                case Keyboard:
+                    actionMap[Keyboard.current]?.Invoke(value);
+                    break;
+                default:
+                    if (actionMap.ContainsKey(device))
+                        actionMap[device]?.Invoke(value);
+                    break;
             }
         }
 
-        protected PlayerInput[] players;
-
-        private Gamepad[] gamepads;
-
-        public override void Initialize(Gamepad[] controllers)
+        private void StoreDevices(IReadOnlyList<Gamepad> gamepads)
         {
-            gamepads = controllers;
-            players = new PlayerInput[controllers.Length + 1];
-            var keyboardMouse = new InputDevice[]
+            devices[0] = Keyboard.current;
+            for (int i = 1; i < devices.Length; i++)
             {
-                InputSystem.GetDevice<Keyboard>(),
-                InputSystem.GetDevice<Mouse>(),
-            };
-            players[0] = new PlayerInput(keyboardMouse, new InputAction(name: name, type: InputActionType.Value));
-            for (int i = 1; i < players.Length; i++)
-            {
-                var gamepad = new InputDevice[]
-                {
-                    gamepads[i - 1],
-                };
-                players[i] = new PlayerInput(gamepad, new InputAction(name: name, type: InputActionType.Value));
+                devices[i] = gamepads[i - 1];
             }
-            AddBindings();
+        }
+
+        private void CreateActionMappings(Gamepad[] gamepads)
+        {
+            actionMap.Add(Keyboard.current, null);
+            foreach (var gamepad in gamepads)
+            {
+                actionMap.Add(gamepad, null);
+            }
         }
 
         public void SubscribeToInputAction(Action<TType> action, int playerIndex = 0)
         {
-            if (playerIndex >= 0 && playerIndex < players.Length)
-                players[playerIndex].ValueChanged += action;
+            if (playerIndex > devices.Length - 1)
+                return;
+            actionMap[devices[playerIndex]] += action;
         }
 
         public override void EnableInput()
         {
-            foreach (var playerInput in players)
-            {
-                playerInput.inputAction.Enable();
-            }
+            inputAction.Enable();
         }
 
         public override void DisableInput()
         {
-            foreach (var playerInput in players)
-            {
-                playerInput.inputAction.Disable();
-            }
+            inputAction.Enable();
         }
     }
 }
