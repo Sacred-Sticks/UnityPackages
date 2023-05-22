@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,15 +12,32 @@ namespace Kickstarter.Inputs
         [SerializeField] private int maxPlayerCount;
         [Space(20)]
         [SerializeField] private InputAssetObject[] inputObjects;
-        
+
         public void Initialize()
         {
+            InputSystem.onDeviceChange += OnInputDevicesChange;
             var gamepads = Gamepad.all.Take(maxPlayerCount).ToArray();
             foreach (var inputObject in inputObjects)
             {
                 inputObject.Initialize(gamepads);
             }
             EnableAll();
+        }
+
+        private void OnInputDevicesChange(InputDevice device, InputDeviceChange changeType)
+        {
+            foreach (var inputObject in inputObjects)
+            {
+                switch (changeType)
+                {
+                    case InputDeviceChange.Added:
+                        inputObject.AddDevice(device);
+                        break;
+                    case InputDeviceChange.Removed:
+                        inputObject.RemoveDevice(device);
+                        break;
+                }
+            }
         }
 
         private void EnableAll()
@@ -40,7 +58,7 @@ namespace Kickstarter.Inputs
 
         public void OnDisable()
         {
-            //DisableAll();
+            DisableAll();
         }
     }
 }
