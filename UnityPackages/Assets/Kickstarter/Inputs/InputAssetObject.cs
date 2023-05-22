@@ -14,7 +14,7 @@ namespace Kickstarter.Inputs
         public abstract void DisableInput();
         public abstract void AddDevice(InputDevice device);
         public abstract void RemoveDevice(InputDevice device);
-        
+
         public enum PlayerRegister
         {
             KeyboardMouse,
@@ -51,18 +51,8 @@ namespace Kickstarter.Inputs
         {
             var value = context.ReadValue<TType>();
             var device = context.control.device;
-            
-            switch (device)
-            {
-                case Mouse:
-                case Keyboard:
-                    actionMap[Keyboard.current]?.Invoke(value);
-                    break;
-                default:
-                    if (actionMap.ContainsKey(device))
-                        actionMap[device]?.Invoke(value);
-                    break;
-            }
+            if (actionMap.ContainsKey(device))
+                actionMap[device]?.Invoke(value);
         }
 
         private void StoreDevices(IReadOnlyList<InputDevice> inputDevices)
@@ -92,7 +82,7 @@ namespace Kickstarter.Inputs
             }
             if (deviceToOverride == null)
                 return;
-            var action= actionMap[deviceToOverride];
+            var action = actionMap[deviceToOverride];
             actionMap.Remove(deviceToOverride);
             actionMap.Add(device, action);
         }
@@ -122,18 +112,26 @@ namespace Kickstarter.Inputs
                 break;
             }
         }
-        
+
         public override void RemoveDevice(InputDevice device)
         {
+            var eligibleDeviceReplacements = new List<InputDevice>();
+            if (Keyboard.current != null)
+                eligibleDeviceReplacements.Add(Keyboard.current);
+            eligibleDeviceReplacements.AddRange(Gamepad.all);
             for (int i = 0; i < devices.Length; i++)
             {
+                if (eligibleDeviceReplacements.Contains(devices[i]))
+                    eligibleDeviceReplacements.Remove(devices[i]);
                 if (devices[i] != device)
                     continue;
-                devices[i] = null;
+                var newDevice = eligibleDeviceReplacements.FirstOrDefault();
+                devices[i] = newDevice;
+                AdjustActionMappings(devices, newDevice);
                 break;
             }
         }
-        
+
         public override void EnableInput()
         {
             inputAction.Enable();
