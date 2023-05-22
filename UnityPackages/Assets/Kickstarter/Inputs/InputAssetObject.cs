@@ -23,7 +23,7 @@ namespace Kickstarter.Inputs
         public override void Initialize(Gamepad[] gamepads)
         {
             devices = new InputDevice[gamepads.Length + 1];
-            inputAction = new InputAction(name: name, type: InputActionType.Value);
+            inputAction = new InputAction(name: name, type: InputActionType.PassThrough);
             AddBindings();
             AddRegistration();
             StoreDevices(gamepads);
@@ -40,6 +40,7 @@ namespace Kickstarter.Inputs
         {
             var value = context.ReadValue<TType>();
             var device = context.control.device;
+            
             switch (device)
             {
                 case Mouse:
