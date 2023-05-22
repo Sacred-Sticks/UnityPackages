@@ -1,7 +1,6 @@
 using System;
 using Kickstarter.Variables;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Kickstarter.References
 {
