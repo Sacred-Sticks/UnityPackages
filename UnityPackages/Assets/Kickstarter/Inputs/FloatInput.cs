@@ -7,6 +7,7 @@ namespace Kickstarter.Inputs
     public class FloatInput : InputAssetObject<float>
     {
         [SerializeField] private string[] bindings;
+
         protected override void AddBindings()
         {
             foreach (string binding in bindings)

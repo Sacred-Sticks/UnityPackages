@@ -1,14 +1,19 @@
 using Kickstarter.Inputs;
 using Kickstarter.References;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Movement : MonoBehaviour
 {
+    [FormerlySerializedAs("playerNumber")]
+    [SerializeField] private int playerIndex;
+    [Space(20)]
     [SerializeField] private Vector2Input movementInput;
     [SerializeField] private FloatInput jumpInput;
     [SerializeField] private float inputTolerance;
-    [Space]
+    [Space(20)]
     [SerializeField] private FloatReference speed;
     [SerializeField] private FloatReference jumpHeight;
     
@@ -34,25 +39,25 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         body = GetComponent<Rigidbody>();
-        movementInput.ValueChanged += OnMovementInputChanged;
-        jumpInput.ValueChanged += JumpInputValueChanged;
     }
 
     private void Start()
     {
+        movementInput.SubscribeToInputAction(OnMovementInputChange, playerIndex);
+        jumpInput.SubscribeToInputAction(OnJumpInputChange, playerIndex);
         jumpSpeed = Mathf.Sqrt(2 * -Physics.gravity.y * JumpHeight);
     }
 
-    private void JumpInputValueChanged()
+    private void OnJumpInputChange(float input)
     {
-        if (jumpInput.Value < inputTolerance)
+        if (input < inputTolerance)
             return;
         body.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
     }
 
-    private void OnMovementInputChanged()
+    private void OnMovementInputChange(Vector2 input)
     {
-        var direction = movementInput.Value.x * transform.right + movementInput.Value.y * transform.forward;
+        var direction = input.x * transform.right + input.y * transform.forward;
         velocity = direction * Speed;
     }
 

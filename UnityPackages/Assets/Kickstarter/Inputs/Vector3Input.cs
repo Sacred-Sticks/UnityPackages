@@ -9,13 +9,11 @@ namespace Kickstarter.Inputs
     {
         [SerializeField] private string[] bindings;
         [SerializeField] private ThreeDimensionalBinding[] compositeBindings;
-        
+
         protected override void AddBindings()
         {
             foreach (string binding in bindings)
-            {
                 inputAction.AddBinding(binding);
-            }
             foreach (var binding in compositeBindings)
             {
                 inputAction.AddCompositeBinding("3DVector")
@@ -31,6 +29,7 @@ namespace Kickstarter.Inputs
         [System.Serializable]
         private class ThreeDimensionalBinding
         {
+            [SerializeField] private string name;
             [SerializeField] private string up;
             [SerializeField] private string down;
             [SerializeField] private string left;

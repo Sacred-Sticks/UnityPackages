@@ -8,7 +8,7 @@ namespace Kickstarter.Inputs
     {
         [SerializeField] private string[] bindings;
         [SerializeField] private TwoDimensionalBinding[] compositeBindings;
-        
+
         protected override void AddBindings()
         {
             foreach (string binding in bindings)
