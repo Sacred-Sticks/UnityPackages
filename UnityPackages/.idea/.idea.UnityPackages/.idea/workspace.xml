@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/BoolInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/BoolInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/FloatInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/FloatInput.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputAssetObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputAssetObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/IntInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/IntInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/Vector2Input.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/Vector2Input.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/Vector3Input.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/Vector3Input.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +128,7 @@
       <workItem from="1684039732213" duration="14140000" />
       <workItem from="1684782507971" duration="2525000" />
       <workItem from="1684785622300" duration="766000" />
-      <workItem from="1684786673321" duration="5612000" />
+      <workItem from="1684786673321" duration="6222000" />
     </task>
     <servers />
   </component>
@@ -163,13 +152,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Test Scripts/Movement.cs</url>
-          <line>52</line>
+          <line>49</line>
           <properties documentPath="C:\Users\Ackma\OneDrive\Documents\GitHub\UnityPackages\UnityPackages\Assets\Test Scripts\Movement.cs" initialLine="52" containingFunctionPresentation="method 'OnJumpInputChange'">
             <startOffsets>
-              <option value="1320" />
+              <option value="1252" />
             </startOffsets>
             <endOffsets>
-              <option value="1347" />
+              <option value="1279" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="19" />

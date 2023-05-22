@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84f4b6b32274ea46ad38504b394842e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 0
+  playerRegister: 0
   movementInput: {fileID: 11400000, guid: d921958c504bf3249bfe15658e776481, type: 2}
   jumpInput: {fileID: 11400000, guid: e82327bcac192324bab5d245c5ba5de2, type: 2}
   inputTolerance: 0.5
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84f4b6b32274ea46ad38504b394842e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 1
+  playerRegister: 1
   movementInput: {fileID: 11400000, guid: d921958c504bf3249bfe15658e776481, type: 2}
   jumpInput: {fileID: 11400000, guid: e82327bcac192324bab5d245c5ba5de2, type: 2}
   inputTolerance: 0.5

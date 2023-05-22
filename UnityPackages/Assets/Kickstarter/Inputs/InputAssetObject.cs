@@ -14,6 +14,15 @@ namespace Kickstarter.Inputs
         public abstract void DisableInput();
         public abstract void AddDevice(InputDevice device);
         public abstract void RemoveDevice(InputDevice device);
+        
+        public enum PlayerRegister
+        {
+            KeyboardMouse,
+            ControllerOne,
+            ControllerTwo,
+            ControllerThree,
+            ControllerFour,
+        }
     }
 
     public abstract class InputAssetObject<TType> : InputAssetObject where TType : struct
@@ -88,10 +97,17 @@ namespace Kickstarter.Inputs
             actionMap.Add(device, action);
         }
 
-        public void SubscribeToInputAction(Action<TType> action, int playerIndex = 0)
+        public void SubscribeToInputAction(Action<TType> action, PlayerRegister playerRegister)
         {
-            if (playerIndex > devices.Length - 1)
-                return;
+            int playerIndex = playerRegister switch
+            {
+                PlayerRegister.KeyboardMouse => 0,
+                PlayerRegister.ControllerOne => 1,
+                PlayerRegister.ControllerTwo => 2,
+                PlayerRegister.ControllerThree => 3,
+                PlayerRegister.ControllerFour => 4,
+                _ => throw new ArgumentOutOfRangeException(nameof(playerRegister), playerRegister, null)
+            };
             actionMap[devices[playerIndex]] += action;
         }
 
