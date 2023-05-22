@@ -2,23 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/ConditionalHidePropertyDrawer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj.DotSettings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/BoolInput.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/BoolInput.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/FloatInput.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/FloatInput.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputAssetObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputAssetObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/Vector3Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/Vector3Input.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/References/BoolReferenceDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/References/BoolReferenceDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/References/FloatReferenceDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/References/FloatReferenceDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/References/IntReferenceDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/References/IntReferenceDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/References/Vector2ReferenceDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/References/Vector2ReferenceDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/References/Vector3ReferenceDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/References/Vector3ReferenceDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/Variables.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/Variables/BoolVariableEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/Variables/BoolVariableEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/Variables/ConditionalHidePropertyDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/Variables/ConditionalHidePropertyDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/Editor/ConditionalHidePropertyDrawer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/References/IntReference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Reference Variables/References/IntReference.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/IntInput.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/IntInput.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/Vector2Input.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/Vector2Input.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/Vector3Input.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/Vector3Input.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,13 +24,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11d97693183d4a6bb35c29ae7882c66b81b600/a7/6db959e6/Editor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/16/a9c7196b/EventArgs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/73/f0876fcf/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/81/ea11d7ca/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/8d/7f43adf1/Delegate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/fc/b6cbf078/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Categorization/ObjectCategories.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Inputs/BoolInput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Inputs/FloatInput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Inputs/IntInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -99,10 +93,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19592">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="19592" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -144,7 +138,8 @@
       <workItem from="1683949666241" duration="101000" />
       <workItem from="1684039732213" duration="14140000" />
       <workItem from="1684782507971" duration="2525000" />
-      <workItem from="1684785622300" duration="585000" />
+      <workItem from="1684785622300" duration="766000" />
+      <workItem from="1684786673321" duration="5612000" />
     </task>
     <servers />
   </component>

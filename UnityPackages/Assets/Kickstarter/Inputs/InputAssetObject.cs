@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,8 @@ namespace Kickstarter.Inputs
         protected abstract void AddBindings();
         public abstract void EnableInput();
         public abstract void DisableInput();
+        public abstract void AddDevice(InputDevice device);
+        public abstract void RemoveDevice(InputDevice device);
     }
 
     public abstract class InputAssetObject<TType> : InputAssetObject where TType : struct
@@ -26,7 +29,7 @@ namespace Kickstarter.Inputs
             AddBindings();
             AddRegistration();
             StoreDevices(gamepads);
-            CreateActionMappings(gamepads);
+            CreateActionMappings(devices);
         }
 
         private void AddRegistration()
@@ -53,22 +56,36 @@ namespace Kickstarter.Inputs
             }
         }
 
-        private void StoreDevices(IReadOnlyList<Gamepad> gamepads)
+        private void StoreDevices(IReadOnlyList<InputDevice> inputDevices)
         {
             devices[0] = Keyboard.current;
             for (int i = 1; i < devices.Length; i++)
             {
-                devices[i] = gamepads[i - 1];
+                devices[i] = inputDevices[i - 1];
             }
         }
 
-        private void CreateActionMappings(Gamepad[] gamepads)
+        private void CreateActionMappings(InputDevice[] inputDevices)
         {
-            actionMap.Add(Keyboard.current, null);
-            foreach (var gamepad in gamepads)
+            foreach (var inputDevice in inputDevices)
             {
-                actionMap.Add(gamepad, null);
+                actionMap.Add(inputDevice, null);
             }
+        }
+
+        private void AdjustActionMappings(InputDevice[] inputDevices, InputDevice device)
+        {
+            InputDevice deviceToOverride = null;
+            foreach (var key in actionMap.Keys.Where(key => Array.IndexOf(inputDevices, key) == -1))
+            {
+                deviceToOverride = key;
+                break;
+            }
+            if (deviceToOverride == null)
+                return;
+            var action= actionMap[deviceToOverride];
+            actionMap.Remove(deviceToOverride);
+            actionMap.Add(device, action);
         }
 
         public void SubscribeToInputAction(Action<TType> action, int playerIndex = 0)
@@ -78,6 +95,29 @@ namespace Kickstarter.Inputs
             actionMap[devices[playerIndex]] += action;
         }
 
+        public override void AddDevice(InputDevice device)
+        {
+            for (int i = 0; i < devices.Length; i++)
+            {
+                if (devices[i] != null)
+                    continue;
+                devices[i] = device;
+                AdjustActionMappings(devices, device);
+                break;
+            }
+        }
+        
+        public override void RemoveDevice(InputDevice device)
+        {
+            for (int i = 0; i < devices.Length; i++)
+            {
+                if (devices[i] != device)
+                    continue;
+                devices[i] = null;
+                break;
+            }
+        }
+        
         public override void EnableInput()
         {
             inputAction.Enable();
