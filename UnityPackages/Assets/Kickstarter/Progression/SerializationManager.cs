@@ -1,16 +1,13 @@
-using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using Kickstarter.Extensions;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Kickstarter.Progression
 {
-    public static class SaveManager
+    public static class SerializationManager
     {
-        public static void SaveData<T>(T data, string fileName)
+        public static void SaveData<TDataType>(TDataType data, string fileName)
         {
             string filePath = Path.Combine(Application.persistentDataPath, fileName);
             var formatter = new BinaryFormatter();
