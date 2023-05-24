@@ -696,6 +696,8 @@ MonoBehaviour:
     useConstant: 1
     constantValue: 5
     variable: {fileID: 0}
+  positionFileLocation: p0.position.sav
+  rotationFileLocation: p0.rotation.sav
 --- !u!114 &1385287103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,12 +720,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1385287095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 751ef9e7d2103864f911e3c7817e6cf0, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f3625d1536677d4693f3405f4f38341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataFileLocations:
-  - SavedPosition.sav
-  - SavedRotation.sav
 --- !u!1 &1958885123
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +738,7 @@ GameObject:
   - component: {fileID: 1958885126}
   - component: {fileID: 1958885125}
   - component: {fileID: 1958885124}
+  - component: {fileID: 1958885131}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Untagged
@@ -783,6 +783,8 @@ MonoBehaviour:
     useConstant: 1
     constantValue: 5
     variable: {fileID: 0}
+  positionFileLocation: p1.position.sav
+  rotationFileLocation: p1.rotation.sav
 --- !u!54 &1958885126
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -797,7 +799,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &1958885127
 BoxCollider:
@@ -877,3 +879,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1958885131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958885123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3625d1536677d4693f3405f4f38341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
