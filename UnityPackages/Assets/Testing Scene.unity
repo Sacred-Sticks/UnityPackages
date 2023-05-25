@@ -568,9 +568,10 @@ GameObject:
   - component: {fileID: 1385287099}
   - component: {fileID: 1385287098}
   - component: {fileID: 1385287097}
+  - component: {fileID: 1385287105}
   - component: {fileID: 1385287102}
-  - component: {fileID: 1385287103}
   - component: {fileID: 1385287104}
+  - component: {fileID: 1385287103}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -684,7 +685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84f4b6b32274ea46ad38504b394842e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRegister: 0
   movementInput: {fileID: 11400000, guid: d921958c504bf3249bfe15658e776481, type: 2}
   jumpInput: {fileID: 11400000, guid: e82327bcac192324bab5d245c5ba5de2, type: 2}
   inputTolerance: 0.5
@@ -723,6 +723,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3625d1536677d4693f3405f4f38341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1385287105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385287095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f54b61d327355064b85dd1471cd11d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 0
 --- !u!1 &1958885123
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,8 +749,8 @@ GameObject:
   - component: {fileID: 1958885128}
   - component: {fileID: 1958885127}
   - component: {fileID: 1958885126}
+  - component: {fileID: 1958885132}
   - component: {fileID: 1958885125}
-  - component: {fileID: 1958885124}
   - component: {fileID: 1958885131}
   m_Layer: 0
   m_Name: Player 2
@@ -746,19 +759,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1958885124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958885123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7da3403ac02f47545a3fddfe08987431, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mover: {fileID: 1958885125}
 --- !u!114 &1958885125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,7 +771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84f4b6b32274ea46ad38504b394842e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRegister: 1
   movementInput: {fileID: 11400000, guid: d921958c504bf3249bfe15658e776481, type: 2}
   jumpInput: {fileID: 11400000, guid: e82327bcac192324bab5d245c5ba5de2, type: 2}
   inputTolerance: 0.5
@@ -891,3 +890,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3625d1536677d4693f3405f4f38341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1958885132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958885123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f54b61d327355064b85dd1471cd11d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1

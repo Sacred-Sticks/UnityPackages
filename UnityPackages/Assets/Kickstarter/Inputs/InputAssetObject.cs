@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Kickstarter.Identification;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,15 +15,6 @@ namespace Kickstarter.Inputs
         public abstract void DisableInput();
         public abstract void AddDevice(InputDevice device);
         public abstract void RemoveDevice(InputDevice device);
-
-        public enum PlayerRegister
-        {
-            KeyboardMouse,
-            ControllerOne,
-            ControllerTwo,
-            ControllerThree,
-            ControllerFour,
-        }
     }
 
     public abstract class InputAssetObject<TType> : InputAssetObject where TType : struct
@@ -87,15 +79,15 @@ namespace Kickstarter.Inputs
             actionMap.Add(device, action);
         }
 
-        public void SubscribeToInputAction(Action<TType> action, PlayerRegister playerRegister)
+        public void SubscribeToInputAction(Action<TType> action, Player.PlayerIdentifier playerRegister)
         {
             int playerIndex = playerRegister switch
             {
-                PlayerRegister.KeyboardMouse => 0,
-                PlayerRegister.ControllerOne => 1,
-                PlayerRegister.ControllerTwo => 2,
-                PlayerRegister.ControllerThree => 3,
-                PlayerRegister.ControllerFour => 4,
+                Player.PlayerIdentifier.KeyboardAndMouse => 0,
+                Player.PlayerIdentifier.ControllerOne => 1,
+                Player.PlayerIdentifier.ControllerTwo => 2,
+                Player.PlayerIdentifier.ControllerThree => 3,
+                Player.PlayerIdentifier.ControllerFour => 4,
                 _ => throw new ArgumentOutOfRangeException(nameof(playerRegister), playerRegister, null)
             };
             actionMap[devices[playerIndex]] += action;

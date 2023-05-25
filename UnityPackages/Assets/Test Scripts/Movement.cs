@@ -1,3 +1,4 @@
+using Kickstarter.Identification;
 using Kickstarter.Inputs;
 using Kickstarter.Progression;
 using Kickstarter.References;
@@ -5,10 +6,9 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(DataManager))]
+[RequireComponent(typeof(Player))]
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private InputAssetObject.PlayerRegister playerRegister;
-    [Space(20)]
     [SerializeField] private Vector2Input movementInput;
     [SerializeField] private FloatInput jumpInput;
     [SerializeField] private float inputTolerance;
@@ -50,8 +50,9 @@ public class Movement : MonoBehaviour
     
     private void Start()
     {
-        movementInput.SubscribeToInputAction(OnMovementInputChange, playerRegister);
-        jumpInput.SubscribeToInputAction(OnJumpInputChange, playerRegister);
+        var player = GetComponent<Player>();
+        movementInput.SubscribeToInputAction(OnMovementInputChange, player.PlayerID);
+        jumpInput.SubscribeToInputAction(OnJumpInputChange, player.PlayerID);
         jumpSpeed = Mathf.Sqrt(2 * -Physics.gravity.y * JumpHeight);
     }
 
