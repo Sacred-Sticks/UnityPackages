@@ -1,11 +1,9 @@
 using Kickstarter.Identification;
 using Kickstarter.Inputs;
-using Kickstarter.Progression;
 using Kickstarter.References;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(DataManager))]
 [RequireComponent(typeof(Player))]
 public class Movement : MonoBehaviour
 {
@@ -15,9 +13,6 @@ public class Movement : MonoBehaviour
     [Space(20)]
     [SerializeField] private FloatReference speed;
     [SerializeField] private FloatReference jumpHeight;
-    [Space]
-    [SerializeField] private string positionFileLocation;
-    [SerializeField] private string rotationFileLocation;
     
     private float Speed
     {
@@ -33,18 +28,12 @@ public class Movement : MonoBehaviour
             return jumpHeight.Value;
         }
     }
-
-    private DataManager progressionTracker;
     private Rigidbody body;
     private Vector3 velocity;
     private float jumpSpeed;
     
     private void Awake()
     {
-        progressionTracker = GetComponent<DataManager>();
-        progressionTracker.AddData(positionFileLocation, SetPosition, GetPosition);
-        progressionTracker.AddData(rotationFileLocation, SetRotation, GetRotation);
-        progressionTracker.LoadAll();
         body = GetComponent<Rigidbody>();
     }
     
@@ -54,11 +43,6 @@ public class Movement : MonoBehaviour
         movementInput.SubscribeToInputAction(OnMovementInputChange, player.PlayerID);
         jumpInput.SubscribeToInputAction(OnJumpInputChange, player.PlayerID);
         jumpSpeed = Mathf.Sqrt(2 * -Physics.gravity.y * JumpHeight);
-    }
-
-    private void OnDestroy()
-    {
-        progressionTracker.SaveAll();
     }
 
     private void OnJumpInputChange(float input)
@@ -78,26 +62,4 @@ public class Movement : MonoBehaviour
     {
         body.velocity = velocity + body.velocity.y * Vector3.up;
     }
-
-    #region SaveLoadHandlers
-    private void SetPosition(Vector3 position)
-    {
-        transform.position = position;
-    }
-
-    private Vector3 GetPosition()
-    {
-        return transform.position;
-    }
-
-    private void SetRotation(Quaternion rotation)
-    {
-        transform.rotation = rotation;
-    }
-
-    private Quaternion GetRotation()
-    {
-        return transform.rotation;
-    }
-    #endregion
 }
