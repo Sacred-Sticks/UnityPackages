@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Progression/SaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Progression/SaveManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/SaveLoad.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/SaveLoad.cs.meta" beforeDir="false" />
-    </list>
+    <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,6 +132,7 @@
       <workItem from="1684786673321" duration="8243000" />
       <workItem from="1684848396438" duration="9106000" />
       <workItem from="1684943193399" duration="5578000" />
+      <workItem from="1685047100098" duration="465000" />
     </task>
     <servers />
   </component>
