@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Kickstarter.Categorization;
+using Kickstarter.Events;
 using Kickstarter.Extensions;
 using Kickstarter.Identification;
 using UnityEngine;
@@ -71,6 +72,7 @@ namespace Kickstarter.Progression
         public void SaveData()
         {
             SaveAll();
+            EventManager.Trigger($"{player.PlayerID}", new SaveEvent());
         }
 
         public void LoadData()
@@ -86,6 +88,11 @@ namespace Kickstarter.Progression
                 return;
             currentCheckpoint = other.gameObject.transform;
             SaveData();
+        }
+
+        public class SaveEvent
+        {
+            
         }
     }
 }

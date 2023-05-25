@@ -9,12 +9,12 @@ public class TakeData : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.AddListener<EventCall>(OnEventCalled);
+        EventManager.AddListener<EventCall>("Movement", OnEventCalled);
     }
 
     private void OnDisable()
     {
-        EventManager.RemoveListener<EventCall>(OnEventCalled);
+        EventManager.RemoveListener<EventCall>("Movement", OnEventCalled);
     }
 
     private void OnEventCalled(EventCall args)
