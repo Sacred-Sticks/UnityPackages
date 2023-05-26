@@ -2,6 +2,7 @@ using System;
 using Kickstarter.Events;
 using Kickstarter.Extensions;
 using Kickstarter.Identification;
+using Kickstarter.Progression.Types;
 using UnityEngine;
 
 namespace Kickstarter.Progression
@@ -12,7 +13,7 @@ namespace Kickstarter.Progression
         [SerializeField] private SaveType saveType;
 
         public Transform SaveTarget { private get; set; }
-        
+
         public class TransformData
         {
             public Vector3 Position { get; }
@@ -25,8 +26,8 @@ namespace Kickstarter.Progression
                 Rotation = rotation;
                 LocalScale = localScale;
             }
-            
-            private TransformData(){}
+
+            private TransformData() {}
 
             public override string ToString()
             {
@@ -58,19 +59,21 @@ namespace Kickstarter.Progression
         }
 
         private Player player;
+        private string fileID;
+        private string saveEventKey;
 
         private void Awake()
         {
             player = GetComponent<Player>();
-
-            SetupSaveType();
-
-            AddData($"{player.PlayerID}.transform.sav", t =>
+            fileID = $"{player.PlayerID}.transform.sav";
+            saveEventKey = $"{player.PlayerID}.saveData";
+            AddData(fileID, t =>
             {
                 transform.position = t.Position;
                 transform.rotation = t.Rotation;
                 transform.localScale = t.LocalScale;
-            } , () => new TransformData(SaveTarget.position, SaveTarget.rotation, transform.localScale));
+            }, () => new TransformData(SaveTarget.position, SaveTarget.rotation, transform.localScale));
+            SetupSaveType();
         }
 
         private void SetupSaveType()
@@ -93,17 +96,24 @@ namespace Kickstarter.Progression
             void SetupCheckpointRegister()
             {
                 var register = gameObject.AddComponent<CheckpointRegister>();
-                register.PlayerDataController = this;
+                register.CheckpointActivated += SaveActivated;
             }
 
             void SetupSaveStations()
             {
-
+                var register = gameObject.AddComponent<StationRegister>();
+                register.SaveStationActivated += SaveActivated;
             }
 
             void SetupQuickSave()
             {
 
+            }
+
+            void SaveActivated(Transform respawnPoint)
+            {
+                SaveTarget = respawnPoint;
+                SaveData();
             }
         }
 
@@ -115,7 +125,7 @@ namespace Kickstarter.Progression
         public void SaveData()
         {
             SaveAll();
-            EventManager.Trigger($"{player.PlayerID}", new SaveEvent());
+            EventManager.Trigger(saveEventKey, new SaveEvent());
         }
 
         public void LoadData()
@@ -125,7 +135,7 @@ namespace Kickstarter.Progression
 
         public class SaveEvent
         {
-            
+
         }
     }
 }

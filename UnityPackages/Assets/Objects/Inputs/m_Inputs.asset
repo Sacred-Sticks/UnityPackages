@@ -16,3 +16,4 @@ MonoBehaviour:
   inputObjects:
   - {fileID: 11400000, guid: d921958c504bf3249bfe15658e776481, type: 2}
   - {fileID: 11400000, guid: e82327bcac192324bab5d245c5ba5de2, type: 2}
+  - {fileID: 11400000, guid: ae1494c35e1468f4fa5482cb2cbe712c, type: 2}
