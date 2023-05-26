@@ -1,6 +1,4 @@
 using System;
-using System.Linq;
-using Kickstarter.Categorization;
 using Kickstarter.Events;
 using Kickstarter.Extensions;
 using Kickstarter.Identification;
@@ -9,10 +7,11 @@ using UnityEngine;
 namespace Kickstarter.Progression
 {
     [RequireComponent(typeof(Player))]
-    public sealed class CheckpointManager : SerializationManager
+    public sealed class PlayerDataController : SerializationManager
     {
-        [SerializeField] private CategoryType checkpointType;
-        private Transform currentCheckpoint;
+        [SerializeField] private SaveType saveType;
+
+        public Transform SaveTarget { private get; set; }
         
         public class TransformData
         {
@@ -51,17 +50,61 @@ namespace Kickstarter.Progression
             }
         }
 
+        public enum SaveType
+        {
+            Checkpoints,
+            SaveStations,
+            QuickSave,
+        }
+
         private Player player;
 
         private void Awake()
         {
             player = GetComponent<Player>();
+
+            SetupSaveType();
+
             AddData($"{player.PlayerID}.transform.sav", t =>
             {
                 transform.position = t.Position;
                 transform.rotation = t.Rotation;
                 transform.localScale = t.LocalScale;
-            } , () => new TransformData(currentCheckpoint.position, currentCheckpoint.rotation, transform.localScale));
+            } , () => new TransformData(SaveTarget.position, SaveTarget.rotation, transform.localScale));
+        }
+
+        private void SetupSaveType()
+        {
+            switch (saveType)
+            {
+                case SaveType.Checkpoints:
+                    SetupCheckpointRegister();
+                    break;
+                case SaveType.SaveStations:
+                    SetupSaveStations();
+                    break;
+                case SaveType.QuickSave:
+                    SetupQuickSave();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(saveType));
+            }
+
+            void SetupCheckpointRegister()
+            {
+                var register = gameObject.AddComponent<CheckpointRegister>();
+                register.PlayerDataController = this;
+            }
+
+            void SetupSaveStations()
+            {
+
+            }
+
+            void SetupQuickSave()
+            {
+
+            }
         }
 
         private void Start()
@@ -78,16 +121,6 @@ namespace Kickstarter.Progression
         public void LoadData()
         {
             LoadAll();
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (!other.gameObject.TryGetComponent(out ObjectCategories categories))
-                return;
-            if (!categories.Categories.Contains(checkpointType))
-                return;
-            currentCheckpoint = other.gameObject.transform;
-            SaveData();
         }
 
         public class SaveEvent

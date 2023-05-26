@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Events/EventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Events/EventManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Progression/CheckpointManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Progression/CheckpointManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Progression/CheckpointManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Progression/PlayerDataController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Progression/CheckpointManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Progression/PlayerDataController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Progression/SerializationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Progression/SerializationManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +24,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Extensions/StringExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Extensions/Vector2Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Extensions/Vector3Extensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Progression/CheckpointManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Progression/PlayerDataController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -141,6 +140,7 @@
       <workItem from="1684943193399" duration="5578000" />
       <workItem from="1685047100098" duration="6094000" />
       <workItem from="1685053324928" duration="1937000" />
+      <workItem from="1685067543505" duration="1518000" />
     </task>
     <servers />
   </component>
@@ -174,45 +174,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Kickstarter/Progression/SerializationManager.cs</url>
-          <line>44</line>
-          <properties documentPath="C:\Users\Ackma\OneDrive\Documents\GitHub\UnityPackages\UnityPackages\Assets\Kickstarter\Progression\SerializationManager.cs" initialLine="44" containingFunctionPresentation="method 'SaveData'">
-            <startOffsets>
-              <option value="1281" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1354" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Kickstarter/Progression/SerializationManager.cs</url>
-          <line>54</line>
-          <properties documentPath="C:\Users\Ackma\OneDrive\Documents\GitHub\UnityPackages\UnityPackages\Assets\Kickstarter\Progression\SerializationManager.cs" initialLine="54" containingFunctionPresentation="method 'LoadData'">
-            <startOffsets>
-              <option value="1674" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1747" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Kickstarter/Progression/SerializationManager.cs</url>
-          <line>71</line>
-          <properties documentPath="C:\Users\Ackma\OneDrive\Documents\GitHub\UnityPackages\UnityPackages\Assets\Kickstarter\Progression\SerializationManager.cs" initialLine="71" containingFunctionPresentation="method 'ConvertToDataType'">
-            <startOffsets>
-              <option value="2249" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2279" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
