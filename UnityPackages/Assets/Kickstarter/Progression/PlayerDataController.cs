@@ -65,7 +65,7 @@ namespace Kickstarter.Progression
         private void Awake()
         {
             player = GetComponent<Player>();
-            fileID = $"{player.PlayerID}.transform.sav";
+            fileID = $"{player.PlayerID}.transform.sav.bin";
             saveEventKey = $"{player.PlayerID}.saveData";
             AddData(fileID, t =>
             {

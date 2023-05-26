@@ -111,7 +111,7 @@ namespace Kickstarter.Progression
             return data;
         }
 
-        public void AddData<TDataType>(string fileLocation, Action<TDataType> loadData, Func<TDataType> saveData)
+        protected void AddData<TDataType>(string fileLocation, Action<TDataType> loadData, Func<TDataType> saveData)
         {
             var matchingLocation = allData.Where(d => d.FileLocation == fileLocation);
             if (matchingLocation.Any())
