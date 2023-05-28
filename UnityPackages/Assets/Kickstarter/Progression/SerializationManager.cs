@@ -103,8 +103,8 @@ namespace Kickstarter.Progression
                     if (QuaternionExtensions.TryParse(dataString, out var quaternionValue))
                         data = (TDataType)(object)quaternionValue;
                     break;
-                case {} type when type == typeof(CheckpointManager.TransformData):
-                    if (CheckpointManager.TransformData.TryParse(dataString, out var transformDataValue))
+                case {} type when type == typeof(PlayerDataController.TransformData):
+                    if (PlayerDataController.TransformData.TryParse(dataString, out var transformDataValue))
                         data = (TDataType)(object)transformDataValue;
                     break;
             }
@@ -119,7 +119,7 @@ namespace Kickstarter.Progression
             allData.Add(new Datapoint<TDataType>(fileLocation, loadData, saveData));
         }
 
-        protected void RemoveData<TDataType>(string fileLocation)
+        public void RemoveData<TDataType>(string fileLocation)
         {
             var matchingLocation = allData.Where(d => d.FileLocation == fileLocation)
                 .ToArray();
@@ -159,7 +159,7 @@ namespace Kickstarter.Progression
                     case Datapoint<Quaternion> datapoint:
                         SaveData(datapoint.Data, datapoint.FileLocation);
                         break;
-                    case Datapoint<CheckpointManager.TransformData> dataPoint:
+                    case Datapoint<PlayerDataController.TransformData> dataPoint:
                         SaveData(dataPoint.Data, dataPoint.FileLocation);
                         break;
                 }
@@ -220,9 +220,9 @@ namespace Kickstarter.Progression
                             datapoint.LoadData?.Invoke(data);
                         break;
                     }
-                    case Datapoint<CheckpointManager.TransformData> dataPoint:
+                    case Datapoint<PlayerDataController.TransformData> dataPoint:
                     {
-                        if (LoadData(dataPoint.FileLocation, out CheckpointManager.TransformData data))
+                        if (LoadData(dataPoint.FileLocation, out PlayerDataController.TransformData data))
                             dataPoint.LoadData?.Invoke(data);
                         break;
                     }

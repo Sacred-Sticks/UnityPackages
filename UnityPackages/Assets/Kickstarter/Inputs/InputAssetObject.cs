@@ -131,7 +131,7 @@ namespace Kickstarter.Inputs
 
         public override void DisableInput()
         {
-            inputAction.Enable();
+            inputAction.Disable();
         }
     }
 }

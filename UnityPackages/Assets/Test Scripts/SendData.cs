@@ -8,6 +8,6 @@ public class SendData : MonoBehaviour
 
     private void Start()
     {
-        EventManager.Trigger(new EventCall(mover));
+        EventManager.Trigger("Movement", new EventCall(mover));
     }
 }
