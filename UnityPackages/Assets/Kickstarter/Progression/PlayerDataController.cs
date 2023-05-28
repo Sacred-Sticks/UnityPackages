@@ -7,10 +7,45 @@ using UnityEngine;
 
 namespace Kickstarter.Progression
 {
+#if UNITY_EDITOR
+using UnityEditor;
+    [CustomEditor(typeof(PlayerDataController))]
+    public class PlayerDataControllerEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            EditorGUI.BeginDisabledGroup(true);
+            EditorGUILayout.ObjectField("Script", MonoScript.FromMonoBehaviour((PlayerDataController)target), typeof(PlayerDataController), false);
+            EditorGUI.EndDisabledGroup();
+            var property = serializedObject.FindProperty("saveType");
+
+            EditorGUILayout.PropertyField(property);
+
+            var saveType = (PlayerDataController.SaveType)property.enumValueIndex;
+
+            switch (saveType)
+            {
+                case PlayerDataController.SaveType.Checkpoints:
+                    break;
+                case PlayerDataController.SaveType.QuickSave:
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("quickSaveKeySpecifier"));
+                    break;
+                case PlayerDataController.SaveType.SaveStations:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            
+            serializedObject.ApplyModifiedProperties();
+        }
+    }
+#endif
+    
     [RequireComponent(typeof(Player))]
     public sealed class PlayerDataController : SerializationManager
-    {
+    { 
         [SerializeField] private SaveType saveType;
+        [SerializeField] private string quickSaveKeySpecifier = "quickSave";
 
         public Transform SaveTarget { private get; set; }
 
@@ -107,7 +142,9 @@ namespace Kickstarter.Progression
 
             void SetupQuickSave()
             {
-
+                var register = gameObject.AddComponent<QuickSaveRegister>();
+                register.Initialize(player, quickSaveKeySpecifier);
+                register.QuickSave += SaveActivated;
             }
 
             void SaveActivated(Transform respawnPoint)

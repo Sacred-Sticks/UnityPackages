@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputAssetObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputAssetObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Progression/PlayerDataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Progression/PlayerDataController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Progression/SerializationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Progression/SerializationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Objects/Inputs/m_Inputs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Objects/Inputs/m_Inputs.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Testing Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Testing Scene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +26,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Extensions/Vector2Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Extensions/Vector3Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Progression/PlayerDataController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Progression/Types/QuickSaveRegister.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/SaveMe.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/SendData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/TakeData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.4.4/InputSystem/Actions/InputAction.cs" root0="SKIP_HIGHLIGHTING" />
@@ -144,6 +147,7 @@
       <workItem from="1685067543505" duration="1798000" />
       <workItem from="1685073007405" duration="5093000" />
       <workItem from="1685121100154" duration="742000" />
+      <workItem from="1685295623866" duration="5849000" />
     </task>
     <servers />
   </component>
