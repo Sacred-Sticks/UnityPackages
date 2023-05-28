@@ -123,38 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &66594163 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3379394829342921367, guid: f80229f76a973c74bae3ff7bf24b0c63, type: 3}
-  m_PrefabInstance: {fileID: 3379394829345205817}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &66594164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66594163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd0b50d673628a4181706ce5d810f18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  saveType: 2
-  quickSaveKeySpecifier: quickSave
---- !u!114 &66594169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66594163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e84259b5705af714bab71649e26b1fde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventKeySpecifier: quickSave
 --- !u!1 &273190763
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,10 +665,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3379394829342921355, guid: f80229f76a973c74bae3ff7bf24b0c63, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 3379394829342921357, guid: f80229f76a973c74bae3ff7bf24b0c63, type: 3}
       propertyPath: m_RootOrder
       value: 1
