@@ -39,7 +39,7 @@ namespace Kickstarter.Inputs
             }
         }
 
-        private void EnableAll()
+        public void EnableAll()
         {
             foreach (var inputObject in inputObjects)
             {
@@ -53,11 +53,6 @@ namespace Kickstarter.Inputs
             {
                 inputObject.DisableInput();
             }
-        }
-
-        public void OnDisable()
-        {
-            DisableAll();
         }
     }
 }

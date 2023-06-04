@@ -1,5 +1,6 @@
 using Kickstarter.Events;
 using Kickstarter.Identification;
+using Kickstarter.Progression.Types;
 using UnityEngine;
 
 #if UNITY_EDITOR

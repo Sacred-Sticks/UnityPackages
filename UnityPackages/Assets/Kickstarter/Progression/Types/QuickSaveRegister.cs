@@ -3,29 +3,32 @@ using Kickstarter.Events;
 using Kickstarter.Identification;
 using UnityEngine;
 
-public class QuickSaveRegister : MonoBehaviour
+namespace Kickstarter.Progression.Types
 {
-    public Action<Transform> QuickSave;
-
-    private Player.PlayerIdentifier playerID;
-
-    public void Initialize(Player player, string eventKeySpecifier)
+    public class QuickSaveRegister : MonoBehaviour
     {
-        EventManager.AddListener<TriggerQuickSaveEvent>($"{player.PlayerID}.{eventKeySpecifier}", TriggerQuickSave);
-    }
+        public Action<Transform> QuickSave;
 
-    private void TriggerQuickSave(TriggerQuickSaveEvent args)
-    {
-        QuickSave?.Invoke(args.Transform);
-    }
+        private Player.PlayerIdentifier playerID;
 
-    public class TriggerQuickSaveEvent
-    {
-        public Transform Transform { get; }
-
-        public TriggerQuickSaveEvent(Transform transform)
+        public void Initialize(Player player, string eventKeySpecifier)
         {
-            Transform = transform;
+            EventManager.AddListener<TriggerQuickSaveEvent>($"{player.PlayerID}.{eventKeySpecifier}", TriggerQuickSave);
+        }
+
+        private void TriggerQuickSave(TriggerQuickSaveEvent args)
+        {
+            QuickSave?.Invoke(args.Transform);
+        }
+
+        public class TriggerQuickSaveEvent
+        {
+            public Transform Transform { get; }
+
+            public TriggerQuickSaveEvent(Transform transform)
+            {
+                Transform = transform;
+            }
         }
     }
 }
