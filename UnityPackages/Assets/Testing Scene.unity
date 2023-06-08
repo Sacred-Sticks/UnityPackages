@@ -692,6 +692,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 825499031, guid: f80229f76a973c74bae3ff7bf24b0c63, type: 3}
+      propertyPath: animationTransitions.Array.data[0].layerName
+      value: Base Layer
+      objectReference: {fileID: 0}
+    - target: {fileID: 825499031, guid: f80229f76a973c74bae3ff7bf24b0c63, type: 3}
+      propertyPath: animationTransitions.Array.data[0].stateName
+      value: Not Statey
+      objectReference: {fileID: 0}
+    - target: {fileID: 825499031, guid: f80229f76a973c74bae3ff7bf24b0c63, type: 3}
+      propertyPath: animationTransitions.Array.data[1].layerName
+      value: Base Layer
+      objectReference: {fileID: 0}
+    - target: {fileID: 825499031, guid: f80229f76a973c74bae3ff7bf24b0c63, type: 3}
+      propertyPath: animationTransitions.Array.data[1].stateName
+      value: New State 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 825499031, guid: f80229f76a973c74bae3ff7bf24b0c63, type: 3}
+      propertyPath: animationTransitions.Array.data[0].layerIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 825499031, guid: f80229f76a973c74bae3ff7bf24b0c63, type: 3}
+      propertyPath: animationTransitions.Array.data[1].layerIndex
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3379394829342921357, guid: f80229f76a973c74bae3ff7bf24b0c63, type: 3}
       propertyPath: m_RootOrder
       value: 1
