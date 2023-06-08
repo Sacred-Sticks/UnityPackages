@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="40b5b3ad-2401-4604-8bd3-47a7d8382a6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityPackages/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputAssetObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputAssetObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Progression/PlayerDataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Progression/PlayerDataController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Inputs/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kickstarter/Progression/Types/QuickSaveRegister.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kickstarter/Progression/Types/QuickSaveRegister.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test Scripts/SaveMe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test Scripts/SaveMe.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Testing Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Testing Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +17,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11d97693183d4a6bb35c29ae7882c66b81b600/a7/6db959e6/Editor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/13/48fdff2c/SceneManagerAPI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/92/158e669e/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/ea/55a4d592/ReflectionProbe.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/16/a9c7196b/EventArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/73/f0876fcf/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/81/ea11d7ca/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
@@ -27,6 +32,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Extensions/Vector3Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Progression/PlayerDataController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Kickstarter/Progression/Types/QuickSaveRegister.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/ChangeScene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/Movement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test Scripts/SaveMe.cs" root0="FORCE_HIGHLIGHTING" />
@@ -50,6 +56,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -67,6 +74,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../Desktop/Builds/ThrowAway\UnityPackages.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Ackma\OneDrive\Desktop\Builds\ThrowAway" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Ackma\OneDrive\Documents\GitHub\UnityPackages\UnityPackages -debugCodeOptimization" />
@@ -93,10 +108,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="4232">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="4232" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -148,6 +163,8 @@
       <workItem from="1685073007405" duration="5093000" />
       <workItem from="1685121100154" duration="742000" />
       <workItem from="1685295623866" duration="5849000" />
+      <workItem from="1685833482594" duration="6390000" />
+      <workItem from="1685850686962" duration="1762000" />
     </task>
     <servers />
   </component>
@@ -168,19 +185,6 @@
           <line>44</line>
           <properties documentPath="C:\Users\Ackma\OneDrive\Documents\GitHub\UnityPackages\UnityPackages\Assets\Essentials\Inputs\InputManager.cs" initialLine="42" containingFunctionPresentation="method 'OnEnable'" />
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Test Scripts/Movement.cs</url>
-          <line>50</line>
-          <properties documentPath="C:\Users\Ackma\OneDrive\Documents\GitHub\UnityPackages\UnityPackages\Assets\Test Scripts\Movement.cs" initialLine="52" containingFunctionPresentation="method 'OnJumpInputChange'">
-            <startOffsets>
-              <option value="1279" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1306" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
