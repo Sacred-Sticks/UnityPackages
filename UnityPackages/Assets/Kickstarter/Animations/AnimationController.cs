@@ -18,12 +18,10 @@ namespace Kickstarter.Animations
             animator = GetComponent<Animator>();
         }
 
-        private System.Collections.IEnumerator Start()
+        private void Start()
         {
-            animationTransitions[0].PlayAnimation(animator);
+            animationTransitions.First().PlayAnimation(animator);
             EventManager.AddListener<AnimationEvent>(TriggerAnimation);
-            yield return new WaitForSeconds(5);
-            EventManager.Trigger(new AnimationEvent("New State 0"));
         }
 
         private void TriggerAnimation(AnimationEvent parameters)
