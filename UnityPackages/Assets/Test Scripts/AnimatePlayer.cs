@@ -1,62 +1,49 @@
-using System;
 using Kickstarter.Animations;
 using Kickstarter.Events;
 using Kickstarter.Identification;
 using Kickstarter.Inputs;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-public class AnimatePlayer : MonoBehaviour
+public sealed class AnimatePlayer : AnimationController
 {
-    [SerializeField] private FloatInput jumpInput;
-    [SerializeField] private Vector2Input movementInput; 
     [SerializeField] private Player.PlayerIdentifier player;
-    [SerializeField] private string XMoveParameter;
-    [SerializeField] private string YMoveParameter;
+    [SerializeField] private FloatInput jumpInput;
+    [SerializeField] private Vector2Input movementInput;
+    [Space(20)]
+    [SerializeField] private AnimationTransitionData jumpAnimationData;
+    [SerializeField] private AnimationTransitionData groundedAnimationData;
+    [SerializeField] private AnimationParameterChangeData xMovementData;
+    [SerializeField] private AnimationParameterChangeData yMovementData;
 
     private const float TOLERANCE = 0.5f;
 
-    private string eventKey;
-
-    private void Start()
+    private new void Awake()
     {
-        ConnectToAnimationController();
-        jumpInput.SubscribeToInputAction(OnJumpInputChange, player);
-        movementInput.SubscribeToInputAction(OnMovementInputChange, player);
+        base.Awake();
         EventManager.AddListener<Movement.GroundedEvent>(OnGrounded);
     }
-
-    private void ConnectToAnimationController()
+    
+    private void Start()
     {
-        var animationController = GetComponentInChildren<AnimationController>();
-        if (animationController == null)
-        {
-            Debug.LogWarning("No Animation Controller Found");
-            return;
-        }
-        eventKey = animationController.AnimationEventSpecifier;
-        animationController.OnAnimationEventSpecifierChange += s => eventKey = s;
+        jumpInput.SubscribeToInputAction(OnJumpInputChange, player);
+        movementInput.SubscribeToInputAction(OnMovementInputChange, player);
     }
 
     private void OnJumpInputChange(float input)
     {
         if (input < TOLERANCE)
             return;
-        EventManager.Trigger($"{eventKey}{AnimationController.TransitionEventExtension}", 
-            new AnimationController.AnimationTransitionEvent("Jump", 0.25f, 0));
+        TransitionAnimation(jumpAnimationData);
     }
 
     private void OnMovementInputChange(Vector2 input)
     {
-        EventManager.Trigger($"{eventKey}{AnimationController.ParameterChangeEventExtension}", 
-            new AnimationController.AnimationParameterChangeEvent<float>(XMoveParameter, input.x));
-        EventManager.Trigger($"{eventKey}{AnimationController.ParameterChangeEventExtension}", 
-            new AnimationController.AnimationParameterChangeEvent<float>(YMoveParameter, input.y));
+        ChangeParameter(xMovementData, input.x);
+        ChangeParameter(yMovementData, input.y);
     }
 
     private void OnGrounded(Movement.GroundedEvent parameters)
     {
-        EventManager.Trigger($"{eventKey}{AnimationController.TransitionEventExtension}", 
-            new AnimationController.AnimationTransitionEvent("Base Tree", 0.5f, 0));
+        TransitionAnimation(groundedAnimationData);
     }
 }

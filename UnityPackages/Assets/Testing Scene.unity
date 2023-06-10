@@ -221,33 +221,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &557893437 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3379394829342921367, guid: f80229f76a973c74bae3ff7bf24b0c63, type: 3}
-  m_PrefabInstance: {fileID: 3379394829345205817}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &557893444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3379394829342921357, guid: f80229f76a973c74bae3ff7bf24b0c63, type: 3}
   m_PrefabInstance: {fileID: 3379394829345205817}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &557893445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 557893437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 347ee07a4e41ae643bfee0bf7564bd4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpInput: {fileID: 11400000, guid: e82327bcac192324bab5d245c5ba5de2, type: 2}
-  movementInput: {fileID: 11400000, guid: d921958c504bf3249bfe15658e776481, type: 2}
-  player: 0
-  XMoveParameter: Movement.X
-  YMoveParameter: Movement.Y
 --- !u!1 &558148189
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,10 +2042,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 3760672170071897352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5997dc9c67b5df4cafee55fe975fe74, type: 3}
+  m_Script: {fileID: 11500000, guid: 347ee07a4e41ae643bfee0bf7564bd4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationEventSpecifier: Player
+  player: 0
+  jumpInput: {fileID: 11400000, guid: e82327bcac192324bab5d245c5ba5de2, type: 2}
+  movementInput: {fileID: 11400000, guid: d921958c504bf3249bfe15658e776481, type: 2}
+  jumpAnimationData:
+    target: Jump
+    duration: 0.25
+    layer: 0
+  groundedAnimationData:
+    target: Base Tree
+    duration: 0.5
+    layer: 0
+  xMovementData:
+    target: Movement.X
+  yMovementData:
+    target: Movement.Y
 --- !u!4 &4633810480836344287
 Transform:
   m_ObjectHideFlags: 0
