@@ -1,4 +1,4 @@
-using System.Linq;
+using System;
 using Kickstarter.Events;
 using UnityEngine;
 
@@ -7,85 +7,125 @@ namespace Kickstarter.Animations
     [RequireComponent(typeof(Animator))]
     public class AnimationController : MonoBehaviour
     {
-        [SerializeField] private AnimationTransition[] animationTransitions;
+        [SerializeField] private string animationEventSpecifier;
+
+        public const string TransitionEventExtension = ".Animations.Transition";
+        public const string SetEventExtension = ".Animations.Set";
+        public const string ParameterChangeEventExtension = ".Animations.ParameterChange";
+        
+        public string AnimationEventSpecifier
+        {
+            get
+            {
+                return animationEventSpecifier;
+            }
+            set
+            {
+                string oldSpecifier = AnimationEventSpecifier;
+                animationEventSpecifier = value;
+                UpdateSubscriptions(oldSpecifier, value);
+                OnAnimationEventSpecifierChange?.Invoke(AnimationEventSpecifier);
+            }
+        }
+        
+        public Action<string> OnAnimationEventSpecifierChange { get; set; }
 
         private Animator animator;
 
         private void Awake()
         {
-            if (animationTransitions.Length == 0)
-                Destroy(this);
             animator = GetComponent<Animator>();
+            EventManager.AddListener<AnimationSetEvent>($"{AnimationEventSpecifier}{SetEventExtension}", SetAnimation);
+            EventManager.AddListener<AnimationTransitionEvent>($"{AnimationEventSpecifier}{TransitionEventExtension}", TransitionAnimation);
+            EventManager.AddListener<AnimationParameterChangeEvent>($"{AnimationEventSpecifier}{ParameterChangeEventExtension}", ChangeParameter);
         }
 
-        private void Start()
+        private void UpdateSubscriptions(string oldSpecifier, string newSpecifier)
         {
-            animationTransitions.First().PlayAnimation(animator);
-            EventManager.AddListener<AnimationEvent>(TriggerAnimation);
+            EventManager.RemoveListener<AnimationSetEvent>($"{oldSpecifier}{SetEventExtension}", SetAnimation);
+            EventManager.RemoveListener<AnimationTransitionEvent>($"{oldSpecifier}{TransitionEventExtension}", TransitionAnimation);
+            EventManager.RemoveListener<AnimationParameterChangeEvent>($"{oldSpecifier}{SetEventExtension}", ChangeParameter);
+            
+            EventManager.AddListener<AnimationSetEvent>($"{newSpecifier}{SetEventExtension}", SetAnimation);
+            EventManager.AddListener<AnimationTransitionEvent>($"{newSpecifier}{TransitionEventExtension}", TransitionAnimation);
+            EventManager.AddListener<AnimationParameterChangeEvent>($"{newSpecifier}{SetEventExtension}", ChangeParameter);
         }
 
-        private void TriggerAnimation(AnimationEvent parameters)
+        private void SetAnimation(AnimationSetEvent parameters)
         {
-            var animationState = animationTransitions.FirstOrDefault(s => s.StateName == parameters.StateName);
-            if (animationState == default)
-            {
-                Debug.LogWarning($"No Animate State is named {parameters.StateName}");
-                return;
-            }
-            animationState.CrossFadeAnimation(animator);
+            animator.Play(parameters.Target, parameters.Layer);
         }
 
-        [System.Serializable]
-        private class AnimationTransition
+        private void TransitionAnimation(AnimationTransitionEvent parameters)
         {
-            [SerializeField] private string stateName;
-            [SerializeField] private string stateLayer;
-            [Space]
-            [SerializeField] private float transitionDuration;
-            [SerializeField] private float transitionTimeOffset;
+            animator.CrossFade(parameters.Target, parameters.Duration, parameters.Layer);
+        }
 
-            public string StateName
+        private void ChangeParameter(AnimationParameterChangeEvent parameters)
+        {
+            switch (parameters)
             {
-                get
-                {
-                    return stateName;
-                }
-            }
-
-            public void PlayAnimation(Animator animator)
-            {
-                if (GetLayerIndex(animator, out int layerIndex))
-                    return;
-                if (animator.HasState(layerIndex, Animator.StringToHash(StateName)))
-                    animator.Play(StateName);
-                else 
-                    Debug.LogWarning($"No Animation State Found Titled '{StateName}'");
-            }
-
-            private bool GetLayerIndex(Animator animator, out int layerIndex)
-            {
-                layerIndex = animator.GetLayerIndex(stateLayer);
-                if (layerIndex != -1)
-                    return false;
-                Debug.LogWarning($"{stateLayer} Layer Does Not Exist in the Animation Controller");
-                return true;
-            }
-
-            public void CrossFadeAnimation(Animator animator)
-            {
-                if (GetLayerIndex(animator, out int layerIndex))
-                    return;
-                animator.CrossFade(StateName, transitionDuration, layerIndex, transitionTimeOffset);
+                case AnimationParameterChangeEvent<float> data:
+                    animator.SetFloat(data.Target, data.Value);
+                    break;
+                case AnimationParameterChangeEvent<int> data:
+                    animator.SetInteger(data.Target, data.Value);
+                    break;
+                case AnimationParameterChangeEvent<bool> data:
+                    animator.SetBool(data.Target, data.Value);
+                    break;
+                default:
+                    animator.SetTrigger(parameters.Target);
+                    break;
             }
         }
 
-        public class AnimationEvent
+        public abstract class AnimationEvent
         {
-            public string StateName { get; }
+            public string Target { get; }
 
-            public AnimationEvent(string stateName)
+            protected AnimationEvent(string target)
             {
-                StateName = stateName;
+                Target = target;
+            }
+        }
+        
+        public class AnimationSetEvent : AnimationEvent
+        {
+            public int Layer { get; }
+            
+            public AnimationSetEvent(string target, int layer) : base(target)
+            {
+                Layer = layer;
+            }
+        }
+
+        public class AnimationTransitionEvent : AnimationEvent
+        {
+            public float Duration { get; }
+            public int Layer { get; }
+
+            public AnimationTransitionEvent(string target, float duration, int layer) : base(target)
+            {
+                Duration = duration;
+                Layer = layer;
+            }
+        }
+
+        public class AnimationParameterChangeEvent : AnimationEvent
+        {
+            public AnimationParameterChangeEvent(string target) : base(target)
+            {
+            }
+        }
+
+        public class AnimationParameterChangeEvent<T> : AnimationParameterChangeEvent
+        {
+            public T Value { get; }
+            
+            public AnimationParameterChangeEvent(string target, T value) : base(target)
+            {
+                Value = value;
             }
         }
     }
