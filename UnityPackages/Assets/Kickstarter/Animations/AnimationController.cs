@@ -15,12 +15,12 @@ namespace Kickstarter.Animations
 
         protected void SetAnimation(AnimationSetData parameters)
         {
-            animator.Play(parameters.Target, parameters.Layer);
+            animator.Play(parameters.AnimationState, parameters.Layer);
         }
 
         protected void TransitionAnimation(AnimationTransitionData parameters)
         {
-            animator.CrossFade(parameters.Target, parameters.Duration, parameters.Layer);
+            animator.CrossFade(parameters.AnimationState, parameters.Duration, parameters.Layer);
         }
 
         protected void ChangeParameter<TValueType>(AnimationParameterChangeData parameters, TValueType value)
@@ -28,39 +28,33 @@ namespace Kickstarter.Animations
             switch (value)
             {
                 case float data:
-                    animator.SetFloat(parameters.Target, data);
+                    animator.SetFloat(parameters.ParameterName, data);
                     break;
                 case int data:
-                    animator.SetInteger(parameters.Target, data);
+                    animator.SetInteger(parameters.ParameterName, data);
                     break;
                 case bool data:
-                    animator.SetBool(parameters.Target, data);
+                    animator.SetBool(parameters.ParameterName, data);
                     break;
                 default:
-                    animator.SetTrigger(parameters.Target);
+                    animator.SetTrigger(parameters.ParameterName);
                     break;
             }
         }
 
         [Serializable]
-        protected abstract class AnimationData
+        protected struct AnimationSetData
         {
-            [SerializeField] private string target;
+            [SerializeField] private string animationState;
+            [SerializeField] private int layer;
             
-            public string Target
+            public string AnimationState
             {
                 get
                 {
-                    return target;
+                    return animationState;
                 }
             }
-        }
-
-        [Serializable]
-        protected class AnimationSetData : AnimationData
-        {
-            [SerializeField] private int layer;
-
             public int Layer
             {
                 get
@@ -71,11 +65,26 @@ namespace Kickstarter.Animations
         }
 
         [Serializable]
-        protected class AnimationTransitionData : AnimationData
+        protected struct AnimationTransitionData
         {
-            [SerializeField] private float duration;
+            [SerializeField] private string animationState;
             [SerializeField] private int layer;
-
+            [SerializeField] private float duration;
+            
+            public string AnimationState
+            {
+                get
+                {
+                    return animationState;
+                }
+            }
+            public int Layer
+            {
+                get
+                {
+                    return layer;
+                }
+            }
             public float Duration
             {
                 get
@@ -83,19 +92,20 @@ namespace Kickstarter.Animations
                     return duration;
                 }
             }
-            public int Layer
-            {
-                get
-                {
-                    return layer;
-                }
-            }
         }
 
         [Serializable]
-        protected class AnimationParameterChangeData : AnimationData
+        protected struct AnimationParameterChangeData
         {
+            [SerializeField] private string parameterName;
             
+            public string ParameterName
+            {
+                get
+                {
+                    return parameterName;
+                }
+            }
         }
     }
 }

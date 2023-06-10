@@ -1504,17 +1504,17 @@ MonoBehaviour:
   jumpInput: {fileID: 11400000, guid: e82327bcac192324bab5d245c5ba5de2, type: 2}
   movementInput: {fileID: 11400000, guid: d921958c504bf3249bfe15658e776481, type: 2}
   jumpAnimationData:
-    target: Jump
+    animationState: Jump
+    layer: 0
     duration: 0.25
-    layer: 0
   groundedAnimationData:
-    target: Base Tree
-    duration: 0.5
+    animationState: Base Tree
     layer: 0
+    duration: 0.5
   xMovementData:
-    target: Movement.X
+    parameterName: Movement.X
   yMovementData:
-    target: Movement.Y
+    parameterName: Movement.Y
 --- !u!1 &3936023210937557292
 GameObject:
   m_ObjectHideFlags: 0
