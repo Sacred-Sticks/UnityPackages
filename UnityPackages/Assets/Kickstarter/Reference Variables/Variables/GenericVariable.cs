@@ -10,10 +10,8 @@ namespace Kickstarter.Variables
         [SerializeField] private bool resetValue;
         [ConditionalHide("resetValue", true)]
         [SerializeField] private TDataType initialValue;
-        
-        public delegate void ValueDelegate(object sender, EventArgs e);
 
-        public event ValueDelegate ValueChanged;
+        public Action<TDataType> ValueChanged;
         
         public TDataType Value
         {
@@ -24,7 +22,7 @@ namespace Kickstarter.Variables
             set
             {
                 this.value = value;
-                ValueChanged?.Invoke(this, EventArgs.Empty);
+                ValueChanged?.Invoke(Value);
             }
         }
 

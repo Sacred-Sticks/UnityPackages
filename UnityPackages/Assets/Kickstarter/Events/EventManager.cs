@@ -6,7 +6,7 @@ namespace Kickstarter.Events
     public static class EventManager
     {
         private static readonly Dictionary<string, Delegate> keyedEvents = new Dictionary<string, Delegate>();
-        private static readonly Dictionary<Type, Delegate> unkeyedEvents = new Dictionary<Type, Delegate>();
+        private static readonly Dictionary<Type, Delegate> unKeyedEvents = new Dictionary<Type, Delegate>();
 
         public static void AddListener<T>(string key, Action<T> listener)
         {
@@ -33,26 +33,26 @@ namespace Kickstarter.Events
         public static void AddListener<T>(Action<T> listener)
         {
             var key = typeof(T);
-            if (!unkeyedEvents.ContainsKey(key))
-                unkeyedEvents[key] = null;
+            if (!unKeyedEvents.ContainsKey(key))
+                unKeyedEvents[key] = null;
 
-            unkeyedEvents[key] = (unkeyedEvents[key] as Action<T>) + listener;
+            unKeyedEvents[key] = (unKeyedEvents[key] as Action<T>) + listener;
         }
 
         public static void RemoveListener<T>(Action<T> listener)
         {
             var key = typeof(T);
-            if (unkeyedEvents.ContainsKey(key))
-                unkeyedEvents[key] = (unkeyedEvents[key] as Action<T>) - listener;
+            if (unKeyedEvents.ContainsKey(key))
+                unKeyedEvents[key] = (unKeyedEvents[key] as Action<T>) - listener;
         }
 
         public static void Trigger<T>(T parameters)
         {
             var key = typeof(T);
-            if (!unkeyedEvents.ContainsKey(key))
+            if (!unKeyedEvents.ContainsKey(key))
                 return;
             
-            (unkeyedEvents[key] as Action<T>)?.Invoke(parameters);
+            (unKeyedEvents[key] as Action<T>)?.Invoke(parameters);
         }
     }
 }
