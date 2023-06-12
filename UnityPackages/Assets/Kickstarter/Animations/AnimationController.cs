@@ -37,9 +37,13 @@ namespace Kickstarter.Animations
                     animator.SetBool(parameters.ParameterName, data);
                     break;
                 default:
-                    animator.SetTrigger(parameters.ParameterName);
-                    break;
+                    throw new System.ComponentModel.InvalidEnumArgumentException();
             }
+        }
+
+        protected void ChangeParameter(AnimationParameterChangeData parameters)
+        {
+            animator.SetTrigger(parameters.ParameterName);
         }
 
         [Serializable]
