@@ -5,30 +5,54 @@ namespace Kickstarter.Events
 {
     public static class EventManager
     {
-        public static Dictionary<string, Delegate> Events = new Dictionary<string, Delegate>();
+        private static readonly Dictionary<string, Delegate> keyedEvents = new Dictionary<string, Delegate>();
+        private static readonly Dictionary<Type, Delegate> unkeyedEvents = new Dictionary<Type, Delegate>();
 
-        public static void AddListener<T>(string key, Action<T> listener) where T : class
+        public static void AddListener<T>(string key, Action<T> listener)
         {
-            if (!Events.ContainsKey(key))
-            {
-                Events[key] = null;
-            }
+            if (!keyedEvents.ContainsKey(key))
+                keyedEvents[key] = null;
 
-            Events[key] = (Events[key] as Action<T>) + listener;
+            keyedEvents[key] = (keyedEvents[key] as Action<T>) + listener;
         }
 
-        public static void RemoveListener<T>(string key, Action<T> listener) where T : class
+        public static void RemoveListener<T>(string key, Action<T> listener)
         {
-            if (Events.ContainsKey(key))
-                Events[key] = (Events[key] as Action<T>) - listener;
+            if (keyedEvents.ContainsKey(key))
+                keyedEvents[key] = (keyedEvents[key] as Action<T>) - listener;
         }
 
-        public static void Trigger<T>(string key, T arguments) where T : class
+        public static void Trigger<T>(string key, T arguments)
         {
-            if (!Events.ContainsKey(key))
+            if (!keyedEvents.ContainsKey(key))
                 return;
 
-            (Events[key] as Action<T>)?.Invoke(arguments);
+            (keyedEvents[key] as Action<T>)?.Invoke(arguments);
+        }
+
+        public static void AddListener<T>(Action<T> listener)
+        {
+            var key = typeof(T);
+            if (!unkeyedEvents.ContainsKey(key))
+                unkeyedEvents[key] = null;
+
+            unkeyedEvents[key] = (unkeyedEvents[key] as Action<T>) + listener;
+        }
+
+        public static void RemoveListener<T>(Action<T> listener)
+        {
+            var key = typeof(T);
+            if (unkeyedEvents.ContainsKey(key))
+                unkeyedEvents[key] = (unkeyedEvents[key] as Action<T>) - listener;
+        }
+
+        public static void Trigger<T>(T parameters)
+        {
+            var key = typeof(T);
+            if (!unkeyedEvents.ContainsKey(key))
+                return;
+            
+            (unkeyedEvents[key] as Action<T>)?.Invoke(parameters);
         }
     }
 }

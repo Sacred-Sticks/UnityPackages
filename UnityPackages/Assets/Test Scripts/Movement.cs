@@ -1,3 +1,5 @@
+using System;
+using Kickstarter.Events;
 using Kickstarter.Identification;
 using Kickstarter.Inputs;
 using Kickstarter.References;
@@ -31,6 +33,7 @@ public class Movement : MonoBehaviour
     private Rigidbody body;
     private Vector3 velocity;
     private float jumpSpeed;
+    private bool isGrounded;
     
     private void Awake()
     {
@@ -61,5 +64,17 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         body.velocity = velocity + body.velocity.y * Vector3.up;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (isGrounded)
+            return;
+        EventManager.Trigger(new GroundedEvent());
+    }
+
+    public class GroundedEvent
+    {
+        
     }
 }
