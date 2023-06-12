@@ -4,15 +4,13 @@ using UnityEngine;
 namespace Kickstarter.Events
 {
     [CreateAssetMenu(fileName = "On Event", menuName = "Events/Event Bus")]
-    public class EventBus : ScriptableObject
+    public sealed class EventBus : ScriptableObject
     {
-        public delegate void EventHandler(object sender, EventArgs e);
+        public Action<EventArgs> Event;
 
-        public event EventHandler Event;
-
-        public void CallEvent(object sender, EventArgs e)
+        public void CallEvent(EventArgs parameters)
         {
-            Event?.Invoke(sender, e);
+            Event?.Invoke(parameters);
         }
     }
 }

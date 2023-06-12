@@ -107,6 +107,8 @@ namespace Kickstarter.Progression
                     if (PlayerDataController.TransformData.TryParse(dataString, out var transformDataValue))
                         data = (TDataType)(object)transformDataValue;
                     break;
+                // Add Cases for all custom data types
+                // Later implementing interface to prevent required modification for new data types
             }
             return data;
         }
@@ -162,6 +164,8 @@ namespace Kickstarter.Progression
                     case Datapoint<PlayerDataController.TransformData> dataPoint:
                         SaveData(dataPoint.Data, dataPoint.FileLocation);
                         break;
+                    // Add Cases for new data types in need of serialization
+                    // Later implement using interface to avoid required addition
                 }
             });
         }
@@ -226,6 +230,8 @@ namespace Kickstarter.Progression
                             dataPoint.LoadData?.Invoke(data);
                         break;
                     }
+                    // add cases for additional classes in need of serialization
+                    // Later implement interface to prevent need for modification
                 }
             });
         }
