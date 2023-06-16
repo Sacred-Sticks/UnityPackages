@@ -4,10 +4,9 @@ using UnityEngine.InputSystem;
 namespace Kickstarter.Inputs
 {
     [CreateAssetMenu(fileName = "Vector2 Input", menuName = "Inputs/Input Assets/Vector2")]
-    public class Vector2Input : InputAssetObject<Vector2>
+    public sealed class Vector2Input : InputAssetObject<Vector2>
     {
-        [SerializeField] private string[] bindings;
-        [SerializeField] private TwoDimensionalBinding[] compositeBindings;
+        [SerializeField] private TwoAxisCompositeBinding[] compositeBindings;
 
         protected override void AddBindings()
         {
@@ -24,9 +23,9 @@ namespace Kickstarter.Inputs
         }
 
         [System.Serializable]
-        private class TwoDimensionalBinding
+        private class TwoAxisCompositeBinding
         {
-            [SerializeField] private string name;
+            [SerializeField] private string name = "Composite Binding";
             [SerializeField] private string up;
             [SerializeField] private string down;
             [SerializeField] private string left;

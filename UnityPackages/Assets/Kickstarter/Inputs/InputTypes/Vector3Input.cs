@@ -4,10 +4,9 @@ using UnityEngine.InputSystem;
 namespace Kickstarter.Inputs
 {
     [CreateAssetMenu(fileName = "Vector3 Input", menuName = "Inputs/Input Assets/Vector3")]
-    public class Vector3Input : InputAssetObject<Vector3>
+    public sealed class Vector3Input : InputAssetObject<Vector3>
     {
-        [SerializeField] private string[] bindings;
-        [SerializeField] private ThreeDimensionalBinding[] compositeBindings;
+        [SerializeField] private ThreeAxisCompositeBinding[] compositeBindings;
 
         protected override void AddBindings()
         {
@@ -26,9 +25,9 @@ namespace Kickstarter.Inputs
         }
 
         [System.Serializable]
-        private class ThreeDimensionalBinding
+        private class ThreeAxisCompositeBinding
         {
-            [SerializeField] private string name;
+            [SerializeField] private string name = "Composite Binding";
             [SerializeField] private string up;
             [SerializeField] private string down;
             [SerializeField] private string left;
