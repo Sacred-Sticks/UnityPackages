@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
-using Kickstarter.Extensions;
 using UnityEngine;
 
 namespace Kickstarter.Progression
@@ -29,7 +28,7 @@ namespace Kickstarter.Progression
                 }
             }
             public Action<TDataType> LoadData { get; }
-            private Func<TDataType> SaveData { get; }
+            public Func<TDataType> SaveData { get; }
 
             public Datapoint(string fileLocation, Action<TDataType> loadData, Func<TDataType> saveData) : base(fileLocation)
             {
@@ -40,17 +39,17 @@ namespace Kickstarter.Progression
         
         private readonly List<Datapoint> allData = new List<Datapoint>();
         
-        private void SaveData<TDataType>(TDataType data, string fileName)
+        private void SaveData<TDataType>(TDataType data, string fileName) where TDataType : ISerializable, new()
         {
             string filePath = Path.Combine(Application.persistentDataPath, fileName);
             var formatter = new BinaryFormatter();
             var stream = new FileStream(filePath, FileMode.Create);
 
-            formatter.Serialize(stream, data.ToString());
+            formatter.Serialize(stream, data.Serialize());
             stream.Close();
         }
 
-        private bool LoadData<TDataType>(string fileName, out TDataType output)
+        private bool LoadData<TType>(string fileName, out TType output) where TType : ISerializable, new()
         {
             string filePath = Path.Combine(Application.persistentDataPath, fileName);
             if (!File.Exists(filePath))
@@ -61,56 +60,11 @@ namespace Kickstarter.Progression
             var formatter = new BinaryFormatter();
             var stream = new FileStream(filePath, FileMode.Open);
 
-            output = ConvertToDataType<TDataType>((string)formatter.Deserialize(stream));
+            output = new TType();
+            output.Deserialize((string)formatter.Deserialize(stream));
             stream.Close();
 
             return true;
-        }
-
-        private TDataType ConvertToDataType<TDataType>(string dataString)
-        {
-            var data = default(TDataType);
-            switch (typeof(TDataType))
-            {
-                case {} type when type == typeof(string):
-                    data = (TDataType)(object)dataString;
-                    break;
-                case {} type when type == typeof(bool):
-                    if (bool.TryParse(dataString, out bool boolValue))
-                        data = (TDataType)(object)boolValue;
-                    break;
-                case {} type when type == typeof(int):
-                    if (int.TryParse(dataString, out int intValue))
-                        data = (TDataType)(object)intValue;
-                    break;
-                case {} type when type == typeof(float):
-                    if (float.TryParse(dataString, out float floatValue))
-                        data = (TDataType)(object)floatValue;
-                    break;
-                case {} type when type == typeof(double):
-                    if (double.TryParse(dataString, out double doubleValue))
-                        data = (TDataType)(object)doubleValue;
-                    break;
-                case {} type when type == typeof(Vector2):
-                    if (Vector2Extensions.TryParse(dataString, out var vector2Value))
-                        data = (TDataType)(object)vector2Value;
-                    break;
-                case {} type when type == typeof(Vector3):
-                    if (Vector3Extensions.TryParse(dataString, out var vector3Value))
-                        data = (TDataType)(object)vector3Value;
-                    break;
-                case {} type when type == typeof(Quaternion):
-                    if (QuaternionExtensions.TryParse(dataString, out var quaternionValue))
-                        data = (TDataType)(object)quaternionValue;
-                    break;
-                case {} type when type == typeof(PlayerDataController.TransformData):
-                    if (PlayerDataController.TransformData.TryParse(dataString, out var transformDataValue))
-                        data = (TDataType)(object)transformDataValue;
-                    break;
-                // Add Cases for all custom data types
-                // Later implementing interface to prevent required modification for new data types
-            }
-            return data;
         }
 
         protected void AddData<TDataType>(string fileLocation, Action<TDataType> loadData, Func<TDataType> saveData)
@@ -131,108 +85,22 @@ namespace Kickstarter.Progression
             allData.Remove(datapoint);
         }
 
-        protected void SaveAll()
+        protected void SaveAll<TDataType>() where TDataType : ISerializable, new()
         {
             allData.ForEach(d =>
             {
-                switch (d)
-                {
-                    case Datapoint<string> datapoint:
-                        SaveData(datapoint.Data, datapoint.FileLocation);
-                        break;
-                    case Datapoint<bool> datapoint:
-                        SaveData(datapoint.Data, datapoint.FileLocation);
-                        break;
-                    case Datapoint<int> datapoint:
-                        SaveData(datapoint.Data, datapoint.FileLocation);
-                        break;
-                    case Datapoint<float> datapoint:
-                        SaveData(datapoint.Data, datapoint.FileLocation);
-                        break;
-                    case Datapoint<double> datapoint:
-                        SaveData(datapoint.Data, datapoint.FileLocation);
-                        break;
-                    case Datapoint<Vector2> datapoint:
-                        SaveData(datapoint.Data, datapoint.FileLocation);
-                        break;
-                    case Datapoint<Vector3> datapoint:
-                        SaveData(datapoint.Data, datapoint.FileLocation);
-                        break;
-                    case Datapoint<Quaternion> datapoint:
-                        SaveData(datapoint.Data, datapoint.FileLocation);
-                        break;
-                    case Datapoint<PlayerDataController.TransformData> dataPoint:
-                        SaveData(dataPoint.Data, dataPoint.FileLocation);
-                        break;
-                    // Add Cases for new data types in need of serialization
-                    // Later implement using interface to avoid required addition
-                }
+                var data = (Datapoint<TDataType>)d;
+                SaveData<TDataType>(data.SaveData(), data.FileLocation);
             });
         }
 
-        protected void LoadAll()
+        protected void LoadAll<TType>() where TType : ISerializable, new()
         {
             allData.ForEach(d =>
             {
-                switch (d)
-                {
-                    case Datapoint<string> datapoint:
-                    {
-                        if (LoadData(datapoint.FileLocation, out string data))
-                            datapoint.LoadData?.Invoke(data);
-                        break;
-                    }
-                    case Datapoint<bool> datapoint:
-                    {
-                        if (LoadData(datapoint.FileLocation, out bool data))
-                            datapoint.LoadData?.Invoke(data);
-                        break;
-                    }
-                    case Datapoint<int> datapoint:
-                    {
-                        if (LoadData(datapoint.FileLocation, out int data))
-                            datapoint.LoadData?.Invoke(data);
-                        break;
-                    }
-                    case Datapoint<float> datapoint:
-                    {
-                        if (LoadData(datapoint.FileLocation, out float data))
-                            datapoint.LoadData?.Invoke(data);
-                        break;
-                    }
-                    case Datapoint<double> datapoint:
-                    {
-                        if (LoadData(datapoint.FileLocation, out double data))
-                            datapoint.LoadData?.Invoke(data);
-                        break;
-                    }
-                    case Datapoint<Vector2> datapoint:
-                    {
-                        if (LoadData(datapoint.FileLocation, out Vector2 data))
-                            datapoint.LoadData?.Invoke(data);
-                        break;
-                    }
-                    case Datapoint<Vector3> datapoint:
-                    {
-                        if (LoadData(datapoint.FileLocation, out Vector3 data))
-                            datapoint.LoadData?.Invoke(data);
-                        break;
-                    }
-                    case Datapoint<Quaternion> datapoint:
-                    {
-                        if (LoadData(datapoint.FileLocation, out Quaternion data))
-                            datapoint.LoadData?.Invoke(data);
-                        break;
-                    }
-                    case Datapoint<PlayerDataController.TransformData> dataPoint:
-                    {
-                        if (LoadData(dataPoint.FileLocation, out PlayerDataController.TransformData data))
-                            dataPoint.LoadData?.Invoke(data);
-                        break;
-                    }
-                    // add cases for additional classes in need of serialization
-                    // Later implement interface to prevent need for modification
-                }
+                LoadData(d.FileLocation, out TType output);
+                var datapoint = (Datapoint<TType>)d;
+                datapoint.LoadData(output);
             });
         }
     }
