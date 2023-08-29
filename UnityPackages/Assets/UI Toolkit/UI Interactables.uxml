@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Container" style="flex-grow: 1; flex-shrink: 0; display: flex; visibility: visible; overflow: hidden; align-items: stretch; justify-content: center;">
+        <ui:Button text="Button" display-tooltip-when-elided="true" name="button" />
+        <ui:Toggle label="Toggle" name="toggle" />
+        <ui:Scroller high-value="100" direction="Horizontal" value="42" name="scroller" />
+        <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" text="filler text" name="textEntry" />
+        <ui:Foldout text="Foldout" name="foldout">
+            <ui:SliderInt picking-mode="Ignore" label="SliderInt" value="42" high-value="100" name="sliderInt" />
+            <ui:MinMaxSlider picking-mode="Ignore" label="Min/Max Slider" min-value="10" max-value="12" low-limit="-10" high-limit="40" name="minMaxSlider" style="cursor: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=4154780841294389669&amp;guid=dce1c2a17dbee8c4994789e6cb9d7027&amp;type=3#arrow-down&apos;);" />
+            <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="100" name="slider" />
+        </ui:Foldout>
+        <ui:ProgressBar value="22" title="my-progress" name="progressBar" />
+        <ui:DropdownField label="Dropdown" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="dropdown" />
+        <ui:RadioButtonGroup label="Radio Button Group" value="-1" name="radioButtonGroup">
+            <ui:RadioButton label="Radio Button" name="firstButton" />
+            <ui:RadioButton label="Radio Button" name="secondButton" />
+        </ui:RadioButtonGroup>
+    </ui:VisualElement>
+</ui:UXML>
