@@ -19,6 +19,8 @@ namespace Kickstarter.Inputs
 
     public abstract class InputAssetObject<TType> : InputAssetObject where TType : struct
     {
+        [SerializeField] protected string[] bindings;
+        
         protected readonly Dictionary<InputDevice, Action<TType>> actionMap = new Dictionary<InputDevice, Action<TType>>();
         private InputDevice[] devices;
         protected InputAction inputAction;
@@ -43,6 +45,8 @@ namespace Kickstarter.Inputs
         {
             var value = context.ReadValue<TType>();
             var device = context.control.device;
+            if (device == Mouse.current)
+                device = Keyboard.current;
             if (actionMap.ContainsKey(device))
                 actionMap[device]?.Invoke(value);
         }
@@ -88,7 +92,7 @@ namespace Kickstarter.Inputs
                 Player.PlayerIdentifier.ControllerTwo => 2,
                 Player.PlayerIdentifier.ControllerThree => 3,
                 Player.PlayerIdentifier.ControllerFour => 4,
-                _ => throw new ArgumentOutOfRangeException(nameof(playerRegister), playerRegister, null)
+                _ => throw new ArgumentOutOfRangeException(nameof(playerRegister), playerRegister, null),
             };
             actionMap[devices[playerIndex]] += action;
         }
@@ -133,5 +137,30 @@ namespace Kickstarter.Inputs
         {
             inputAction.Disable();
         }
+
+        [Serializable]
+        protected class AxisCompositeBinding
+        {
+            [SerializeField] private string name = "Composite Binding";
+            [SerializeField] private string negative;
+            [SerializeField] private string positive;
+
+            public string Negative
+            {
+                get
+                {
+                    return negative;
+                }
+            }
+            public string Positive
+            {
+                get
+                {
+                    return positive;
+                }
+            }
+        }
     }
 }
+
+

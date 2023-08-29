@@ -4,15 +4,21 @@ using UnityEngine.InputSystem;
 namespace Kickstarter.Inputs
 {
     [CreateAssetMenu(fileName = "Int Input", menuName = "Inputs/Input Assets/Int")]
-    public class IntInput : InputAssetObject<int>
+    public sealed class IntInput : InputAssetObject<int>
     {
-        [SerializeField] private string[] bindings;
-
+        [SerializeField] private AxisCompositeBinding[] compositeBindings;
+        
         protected override void AddBindings()
         {
             foreach (string binding in bindings)
             {
                 inputAction.AddBinding(binding);
+            }
+            foreach (var binding in compositeBindings)
+            {
+                inputAction.AddCompositeBinding("1DAxis")
+                    .With(nameof(binding.Negative), binding.Negative)
+                    .With(nameof(binding.Positive), binding.Positive);
             }
         }
     }
