@@ -49,11 +49,11 @@ using UnityEditor;
 
         public Transform SaveTarget { private get; set; }
 
-        public class TransformData
+        public class TransformData : ISerializable
         {
-            public Vector3 Position { get; }
-            public Quaternion Rotation { get; }
-            public Vector3 LocalScale { get; }
+            public Vector3 Position { get; private set; }
+            public Quaternion Rotation { get; private set; }
+            public Vector3 LocalScale { get; private set; }
 
             public TransformData(Vector3 position, Quaternion rotation, Vector3 localScale)
             {
@@ -62,17 +62,16 @@ using UnityEditor;
                 LocalScale = localScale;
             }
 
-            private TransformData() {}
+            public TransformData() {}
 
-            public override string ToString()
+            public string Serialize()
             {
                 return $"{Position}\n{Rotation}\n{LocalScale}";
             }
 
-            public static bool TryParse(string input, out TransformData transformData)
+            public bool Deserialize(string serializedData)
             {
-                transformData = new TransformData();
-                string[] components = input.Split('\n');
+                string[] components = serializedData.Split('\n');
                 if (components.Length != 3)
                     return false;
                 if (!Vector3Extensions.TryParse(components[0], out var position))
@@ -81,7 +80,9 @@ using UnityEditor;
                     return false;
                 if (!Vector3Extensions.TryParse(components[2], out var localScale))
                     return false;
-                transformData = new TransformData(position, rotation, localScale);
+                Position = position;
+                Rotation = rotation;
+                LocalScale = localScale;
                 return true;
             }
         }
@@ -100,7 +101,7 @@ using UnityEditor;
         private void Awake()
         {
             player = GetComponent<Player>();
-            fileID = $"{player.PlayerID}.transform.sav.bin";
+            fileID = $"{player.PlayerID}.transform.sav";
             saveEventKey = $"{player.PlayerID}.saveData";
             AddData(fileID, t =>
             {
@@ -161,13 +162,13 @@ using UnityEditor;
 
         public void SaveData()
         {
-            SaveAll();
+            SaveAll<TransformData>();
             EventManager.Trigger(saveEventKey, new SaveEvent());
         }
 
         public void LoadData()
         {
-            LoadAll();
+            LoadAll<TransformData>();
         }
 
         public class SaveEvent
