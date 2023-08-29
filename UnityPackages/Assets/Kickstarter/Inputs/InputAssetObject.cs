@@ -45,6 +45,8 @@ namespace Kickstarter.Inputs
         {
             var value = context.ReadValue<TType>();
             var device = context.control.device;
+            if (device == Mouse.current)
+                device = Keyboard.current;
             if (actionMap.ContainsKey(device))
                 actionMap[device]?.Invoke(value);
         }
@@ -90,7 +92,7 @@ namespace Kickstarter.Inputs
                 Player.PlayerIdentifier.ControllerTwo => 2,
                 Player.PlayerIdentifier.ControllerThree => 3,
                 Player.PlayerIdentifier.ControllerFour => 4,
-                _ => throw new ArgumentOutOfRangeException(nameof(playerRegister), playerRegister, null)
+                _ => throw new ArgumentOutOfRangeException(nameof(playerRegister), playerRegister, null),
             };
             actionMap[devices[playerIndex]] += action;
         }
@@ -160,3 +162,5 @@ namespace Kickstarter.Inputs
         }
     }
 }
+
+

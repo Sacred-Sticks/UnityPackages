@@ -59,6 +59,11 @@ namespace Kickstarter.Inputs
                     return right;
                 }
             }
+
+            public override string ToString()
+            {
+                return name;
+            }
         }
     }
 }
