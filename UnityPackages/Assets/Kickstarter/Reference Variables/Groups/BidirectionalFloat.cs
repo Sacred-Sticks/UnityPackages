@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 
 namespace Kickstarter.Groups
 {
-    [CreateAssetMenu(fileName = "2D Float", menuName = "Variables/Groups/Bidirectional Float")]
+    [CreateAssetMenu(fileName = "2D Float", menuName = "Kickstarter/Variables/Groups/Bidirectional Float")]
     public class BidirectionalFloat : DirectionalFloat
     {
         public FloatVariable Right;

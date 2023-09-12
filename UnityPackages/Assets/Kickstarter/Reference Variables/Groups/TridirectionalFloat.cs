@@ -3,7 +3,7 @@ using Kickstarter.Variables;
 
 namespace Kickstarter.Groups
 {
-    [CreateAssetMenu(fileName = "3D Float", menuName = "Variables/Groups/Tridirectional Float")]
+    [CreateAssetMenu(fileName = "3D Float", menuName = "Kickstarter/Variables/Groups/Tridirectional Float")]
     public class TridirectionalFloat : BidirectionalFloat
     {
         public FloatVariable Forward;

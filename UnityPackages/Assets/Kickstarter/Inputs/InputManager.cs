@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace Kickstarter.Inputs
 {
-    [CreateAssetMenu(fileName = "Input Manager", menuName = "Inputs/Input Manager")]
+    [CreateAssetMenu(fileName = "Input Manager", menuName = "Kickstarter/Inputs/Input Manager")]
     public class InputManager : ScriptableObject
     {
         [Range(1, 4)]

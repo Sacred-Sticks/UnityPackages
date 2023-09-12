@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Kickstarter.Inputs
 {
-    [CreateAssetMenu(fileName = "Vector2 Input", menuName = "Inputs/Input Assets/Vector2")]
+    [CreateAssetMenu(fileName = "Vector2 Input", menuName = "Kickstarter/Inputs/Input Assets/Vector2")]
     public sealed class Vector2Input : InputAssetObject<Vector2>
     {
         [SerializeField] private TwoAxisCompositeBinding[] compositeBindings;

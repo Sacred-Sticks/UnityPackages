@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Kickstarter.Inputs
 {
-    [CreateAssetMenu(fileName = "Float Input", menuName = "Inputs/Input Assets/Float")]
+    [CreateAssetMenu(fileName = "Float Input", menuName = "Kickstarter/Inputs/Input Assets/Float")]
     public sealed class FloatInput : InputAssetObject<float>
     {
         [SerializeField] private AxisCompositeBinding[] compositeBindings;

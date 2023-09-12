@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Kickstarter.Groups
 {
-    [CreateAssetMenu(fileName = "Variable List", menuName = "Variables/Groups/List")]
+    [CreateAssetMenu(fileName = "Variable List", menuName = "Kickstarter/Variables/Groups/List")]
     public class VariableList : ScriptableObject
     {
         [SerializeField] private List<GenericVariable> variables;

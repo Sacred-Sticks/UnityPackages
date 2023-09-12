@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Kickstarter.Events
 {
-    [CreateAssetMenu(fileName = "On Event", menuName = "Events/Event Bus")]
+    [CreateAssetMenu(fileName = "On Event", menuName = "Kickstarter/Events/Event Bus")]
     public sealed class EventBus : ScriptableObject
     {
         public Action<EventArgs> Event;
