@@ -1,16 +1,15 @@
 using System;
 using Kickstarter.Events;
 using UnityEngine;
+using IServiceProvider = Kickstarter.Events.IServiceProvider;
 
-[RequireComponent(typeof(ServiceProvider))]
-public class ServiceTesting : MonoBehaviour, IServiceLocator
+public class ServiceTesting : MonoBehaviour, IServiceProvider
 {
     [SerializeField] private Service debugging;
-
+    
     private void Awake()
     {
-        var provider = GetComponent<ServiceProvider>();
-        provider.Service.Event += ImplementService;
+        debugging.Event += ImplementService;
     }
 
     private void Start()
