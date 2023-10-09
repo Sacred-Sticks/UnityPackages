@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
         if (Instance != null)
             Destroy(gameObject);
         Instance = this;
-        inputManager.Initialize();
+
+        inputManager.Initialize(out int numPlayers);
     }
 }
