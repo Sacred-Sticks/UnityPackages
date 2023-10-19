@@ -1,13 +1,11 @@
 using Kickstarter.Identification;
 
-public interface IInputReceiver<in T> : IInputReceiver
+namespace Kickstarter.Inputs
 {
-    public void ReceiveInput(T input);
-}
+    public interface IInputReceiver
+    {
+        public void SubscribeToInputs(Player player);
 
-public interface IInputReceiver
-{
-    public void SubscribeToInputs(Player player);
-
-    public void UnsubscribeToInputs(Player player);
+        public void UnsubscribeToInputs(Player player);
+    }
 }
