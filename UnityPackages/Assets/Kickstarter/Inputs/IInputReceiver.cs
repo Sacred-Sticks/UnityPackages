@@ -7,8 +7,6 @@ public interface IInputReceiver<in T> : IInputReceiver
 
 public interface IInputReceiver
 {
-    public void ResetInputs(Player oldPlayer, Player newPlayer);
-
     public void SubscribeToInputs(Player player);
 
     public void UnsubscribeToInputs(Player player);

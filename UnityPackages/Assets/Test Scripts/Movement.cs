@@ -1,4 +1,3 @@
-using System;
 using Kickstarter.Events;
 using Kickstarter.Identification;
 using Kickstarter.Inputs;
@@ -7,7 +6,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Player))]
-public class Movement : MonoBehaviour
+public class Movement : MonoBehaviour, IInputReceiver
 {
     [SerializeField] private Vector2Input movementInput;
     [SerializeField] private FloatInput jumpInput;
@@ -42,10 +41,13 @@ public class Movement : MonoBehaviour
     
     private void Start()
     {
-        var player = GetComponent<Player>();
-        movementInput.SubscribeToInputAction(OnMovementInputChange, player.PlayerID);
-        jumpInput.SubscribeToInputAction(OnJumpInputChange, player.PlayerID);
         jumpSpeed = Mathf.Sqrt(2 * -Physics.gravity.y * JumpHeight);
+    }
+
+    private void OnMovementInputChange(Vector2 input)
+    {
+        var direction = input.x * transform.right + input.y * transform.forward;
+        velocity = direction * Speed;
     }
 
     private void OnJumpInputChange(float input)
@@ -53,12 +55,6 @@ public class Movement : MonoBehaviour
         if (input < inputTolerance)
             return;
         body.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
-    }
-
-    private void OnMovementInputChange(Vector2 input)
-    {
-        var direction = input.x * transform.right + input.y * transform.forward;
-        velocity = direction * Speed;
     }
 
     private void FixedUpdate()
@@ -73,8 +69,20 @@ public class Movement : MonoBehaviour
         EventManager.Trigger(new GroundedEvent());
     }
 
+    public void SubscribeToInputs(Player player)
+    {
+        movementInput.SubscribeToInputAction(OnMovementInputChange, player.PlayerID);
+        jumpInput.SubscribeToInputAction(OnJumpInputChange, player.PlayerID);
+    }
+
+    public void UnsubscribeToInputs(Player player)
+    {
+        movementInput.UnsubscribeToInputAction(OnMovementInputChange, player.PlayerID);
+        jumpInput.UnsubscribeToInputAction(OnJumpInputChange, player.PlayerID);
+    }
+
     public class GroundedEvent
     {
-        
+
     }
 }
