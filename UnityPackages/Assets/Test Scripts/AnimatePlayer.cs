@@ -6,7 +6,6 @@ using UnityEngine;
 
 public sealed class AnimatePlayer : AnimationController
 {
-    [SerializeField] private Player.PlayerIdentifier player;
     [SerializeField] private FloatInput jumpInput;
     [SerializeField] private Vector2Input movementInput;
     [Space(20)]
@@ -15,18 +14,21 @@ public sealed class AnimatePlayer : AnimationController
     [SerializeField] private AnimationParameterChangeData xMovementData;
     [SerializeField] private AnimationParameterChangeData yMovementData;
 
+    private Player player;
+
     private const float TOLERANCE = 0.5f;
 
     private new void Awake()
     {
         base.Awake();
+        player = GetComponentInParent<Player>();
         EventManager.AddListener<Movement.GroundedEvent>(OnGrounded);
     }
     
     private void Start()
     {
-        jumpInput.SubscribeToInputAction(OnJumpInputChange, player);
-        movementInput.SubscribeToInputAction(OnMovementInputChange, player);
+        jumpInput.SubscribeToInputAction(OnJumpInputChange, player.PlayerID);
+        movementInput.SubscribeToInputAction(OnMovementInputChange, player.PlayerID);
     }
 
     private void OnJumpInputChange(float input)
