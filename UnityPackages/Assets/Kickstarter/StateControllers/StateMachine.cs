@@ -3,104 +3,91 @@ using System.Collections.Generic;
 
 namespace Kickstarter.StateControllers
 {
-    public class StateMachine<T> where T : Enum
+    public class StateMachine<TEnum> where TEnum : Enum
     {
-        private StateMachine(T initialState)
+        private StateMachine(TEnum initialState, Dictionary<TEnum, List<TEnum>> transitions,
+            Dictionary<TEnum, List<Action>> entryListeners, Dictionary<TEnum, List<Action>> exitListeners)
         {
-            State = initialState;
+            stateTransitions = transitions;
+            this.entryListeners = entryListeners;
+            this.exitListeners = exitListeners;
+            CurrentState = initialState;
         }
 
-        public enum StateChange
-        {
-            Begin,
-            End,
-        }
+        private readonly Dictionary<TEnum, List<TEnum>> stateTransitions;
+        private readonly Dictionary<TEnum, List<Action>> entryListeners;
+        private readonly Dictionary<TEnum, List<Action>> exitListeners;
 
-        private T state;
-        public T State
+        private TEnum currentState;
+        public TEnum CurrentState
         {
-            get => state;
+            get => currentState;
             set
             {
-                if (!stateTransitions[State].Contains(value))
+                if (!stateTransitions.ContainsKey(currentState))
                     return;
-                onStateEnd[state]();
-                state = value;
-                onStateBegin[state]();
+                if (!stateTransitions[currentState].Contains(value))
+                    return;
+                if (exitListeners.ContainsKey(currentState))
+                    exitListeners[currentState].ForEach(l => l.Invoke());
+                currentState = value;
+                if (entryListeners.ContainsKey(currentState))
+                    entryListeners[currentState].ForEach(l => l.Invoke());
             }
         }
 
-        private Dictionary<T, List<T>> stateTransitions;
-        private Dictionary<T, Action> onStateBegin;
-        private Dictionary<T, Action> onStateEnd;
-
-        private void AddTransition(T baseState, T newState)
-        {
-            if (!stateTransitions.ContainsKey(baseState))
-                stateTransitions.Add(baseState, new List<T>());
-            if (!stateTransitions[baseState].Contains(newState))
-                stateTransitions[baseState].Add(newState);
-        }
-
-        public void SubscribeToStateChange(StateChange changeType, T state, Action subscription)
-        {
-            switch (changeType)
-            {
-                case StateChange.Begin:
-                    onStateBegin[state] += subscription;
-                    break;
-                case StateChange.End:
-                    onStateEnd[state] += subscription;
-                    break;
-            }
-        }
-
-        public void UnsubscribeToStateChange(StateChange changeType, T state, Action subscription)
-        {
-            switch (changeType)
-            {
-                case StateChange.Begin:
-                    onStateBegin[state] -= subscription;
-                    break;
-                case StateChange.End:
-                    onStateEnd[state] -= subscription;
-                    break;
-            }
-        }
-
-        public class Builder<TEnum> where TEnum : Enum
+        public class Builder
         {
             private TEnum initialState;
-            private Dictionary<TEnum, List<TEnum>> transitions;
-            
-            private Builder(TEnum initialState)
+            private readonly Dictionary<TEnum, List<TEnum>> transitions;
+            private readonly Dictionary<TEnum, List<Action>> entryListeners;
+            private readonly Dictionary<TEnum, List<Action>> exitListeners;
+
+            public Builder()
             {
-                this.initialState = initialState;
+                transitions = new Dictionary<TEnum, List<TEnum>>();
+                entryListeners = new Dictionary<TEnum, List<Action>>();
+                exitListeners = new Dictionary<TEnum, List<Action>>();
             }
 
-            public Builder<TEnum> CreateStateMachine(TEnum initialState)
+            public Builder WithInitialState(TEnum state)
             {
-                return new Builder<TEnum>(initialState);
+                initialState = state;
+                return this;
             }
 
-            public Builder<TEnum> WithTransition(TEnum fromState, TEnum toState)
+            public Builder WithTransition(TEnum fromState, TEnum toState)
             {
                 if (!transitions.ContainsKey(fromState))
                     transitions.Add(fromState, new List<TEnum>());
-                if (!transitions[fromState].Contains(toState))
-                    transitions[fromState].Add(toState);
+                transitions[fromState].Add(toState);
+                return this;
+            }
+
+            public Builder WithStateListener(TEnum state, transitionType transitionType, Action listener)
+            {
+                var listeners = transitionType switch
+                {
+                    transitionType.Start => entryListeners,
+                    transitionType.End => exitListeners,
+                    _ => throw new ArgumentOutOfRangeException(nameof(transitionType), transitionType, null),
+                };
+                if (!listeners.ContainsKey(state))
+                    listeners.Add(state, new List<Action>());
+                listeners[state].Add(listener);
                 return this;
             }
 
             public StateMachine<TEnum> Build()
             {
-                var stateMachine = new StateMachine<TEnum>(initialState);
-                foreach (var (fromState, toStates) in transitions)
-                {
-                    toStates.ForEach(toState => stateMachine.AddTransition(fromState, toState));
-                }
-                return stateMachine;
+                return new StateMachine<TEnum>(initialState, transitions, entryListeners, exitListeners);
             }
         }
+    }
+
+    public enum transitionType
+    {
+        Start,
+        End,
     }
 }
